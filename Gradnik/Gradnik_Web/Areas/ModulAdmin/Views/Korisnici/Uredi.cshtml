@@ -1,0 +1,144 @@
+﻿@model Gradnik_Web.Areas.ModulAdmin.Models.KorisniciDodajVM
+
+@{
+    ViewBag.Title = "Uredi";
+    Layout = null;
+}
+
+
+
+@using (Html.BeginForm("Spremi","Korisnici"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h4 class="modal-title" id="myModalLabel">Uredi</h4>
+    </div>
+
+
+    <div class="modal-body">
+        <div class="form-group">
+
+            @Html.HiddenFor(model => model.KorisnikId)
+
+
+            <div class="row" style="align-items:center">
+                <div class="col-md-6">
+                    <div class="form-group" style="margin:5px;">
+                        @Html.LabelFor(model => model.KorisnickoIme, "Korisničko ime", htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-3">
+                            @Html.EditorFor(model => model.KorisnickoIme, new { htmlAttributes = new { @class = "form-control", @style = "width: auto;" } })
+                            @Html.ValidationMessageFor(model => model.KorisnickoIme, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    </div>
+                <div class="col-md-6">
+                    <div class="form-group" style="margin:5px;">
+                        @Html.LabelFor(model => model.StrucnoZanimanje, "Struka:", htmlAttributes: new { @class = "control-label col-sm-3" })
+                        <div class="col-md-3">
+                            @Html.EditorFor(model => model.StrucnoZanimanje, new { htmlAttributes = new { @class = "form-control", @style = "width: auto;" } })
+                            @Html.ValidationMessageFor(model => model.StrucnoZanimanje, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="row"   style="align-items:center">
+                <div class="col-md-6">
+                    <div class="form-group"  style="margin:5px;">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-3">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @style = "width: auto;" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" style="margin:5px;">
+                        @Html.LabelFor(model => model.Adresa, htmlAttributes: new { @class = "control-label col-sm-3" })
+                        <div class="col-sm-3">
+                            @Html.EditorFor(model => model.Adresa, new { htmlAttributes = new { @class = "form-control", @style = "width: auto;" } })
+                            @Html.ValidationMessageFor(model => model.Adresa, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row" style="align-items:center">
+                <div class="col-md-6">
+                    <div class="form-group" style="margin:5px;">
+                        @Html.LabelFor(model => model.Ime, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-3">
+                            @Html.EditorFor(model => model.Ime, new { htmlAttributes = new { @class = "form-control", @style = "width: auto;" } })
+                            @Html.ValidationMessageFor(model => model.Ime, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" style="margin:5px;">
+                        @Html.LabelFor(model => model.KontaktTelefon, "Telefon:", htmlAttributes: new { @class = "control-label col-sm-3" })
+                        <div class="col-sm-3">
+                            @Html.EditorFor(model => model.KontaktTelefon, new { htmlAttributes = new { @class = "form-control", @style = "width: auto;" } })
+                            @Html.ValidationMessageFor(model => model.KontaktTelefon, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row" style="align-items:center">
+                <div class="col-md-6">
+                    <div class="form-group" style="margin:5px;">
+                        @Html.LabelFor(model => model.Prezime, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-3">
+                            @Html.EditorFor(model => model.Prezime, new { htmlAttributes = new { @class = "form-control", @style = "width: auto;" } })
+                            @Html.ValidationMessageFor(model => model.Prezime, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" style="margin:5px;" >
+                        @Html.LabelFor(model => model.KorisnikPozicijaId, "Pozicija:", htmlAttributes: new { @class = "control-label col-sm-3" })
+                        <div class="col-sm-3">
+                            @Html.DropDownListFor(model => model.KorisnikPozicijaId, Model.listaPozicija, "Odaberite poziciju", new { @class = "form-control", @style = "width: auto;" })
+                            @Html.ValidationMessageFor(model => model.KorisnikPozicijaId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row" style="align-items:center">
+                <div class="col-md-6">
+                    <div class="form-group" style="margin:5px;">
+                        @Html.LabelFor(model => model.DatumRodjenja, "Datum rođenja:", htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-3">
+                            @Html.EditorFor(model => model.DatumRodjenja, new { htmlAttributes = new { @class = "form-control", @style = "width: auto;" } })
+                            @Html.ValidationMessageFor(model => model.DatumRodjenja, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Zatvori</button>
+        <input type="submit" value="Snimi" class="btn btn-danger" />
+    </div>
+}
+
+

@@ -1,0 +1,43 @@
+﻿@model Gradnik_Web.Areas.ModulSefGradilista.Models.NarudzbaDetaljiViewModel
+
+@Html.DropDownListFor(model => model.DobavljaciId, Model.Dobavljaci, "Odaberite dobavljaca", 
+                       new { @class = "form-control" })
+
+<table class="table table-hover table-bordered" id="narudzbeDetalji">
+    <thead>
+        <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Naziv</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Kolicina</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Cijena</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Stavke)
+        {
+
+            <tr class="odd gradeX">
+
+                <td>@item.Naziv</td>
+                <td>@item.Kolicina</td>
+                <td><input type="text" name="name" value="1" /></td>
+            </tr>
+        }
+
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Naziv</th>
+            <th>Kolicina</th>
+            <th>Cijena</th>
+        </tr>
+    </tfoot>
+</table>
+<button class="btn btn-success">Procesiraj</button>
+<button class="btn btn-success">Otkazi</button>
+
+<script>
+    $(document).ready(function () {
+        $('#dobavljaciTable').DataTable();
+    });
+</script>

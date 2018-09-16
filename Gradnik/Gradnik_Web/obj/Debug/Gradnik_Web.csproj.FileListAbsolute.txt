@@ -1,0 +1,215 @@
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\csc.exe
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\vbc.exe
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\Gradnik_Web.dll.config
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\Gradnik_Web.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\Gradnik_Web.pdb
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\Gradnik_Data.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Helpers.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Mvc.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Razor.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Webpages.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Razor.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\EntityFramework.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\Gradnik_Data.pdb
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Razor.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Webpages.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Razor.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Helpers.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\System.Web.Mvc.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\EntityFramework.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.csprojResolveAssemblyReference.cache
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.pdb
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\csc.exe.config
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\csc.rsp
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\csi.exe
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\csi.rsp
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\System.AppContext.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\vbc.exe.config
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Web\bin\roslyn\vbc.rsp
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.csprojResolveAssemblyReference.cache
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.pdb
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csc.exe
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csc.exe.config
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csc.rsp
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csi.exe
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csi.rsp
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.AppContext.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\vbc.exe
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\vbc.exe.config
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\vbc.rsp
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Web.dll.config
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Web.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Web.pdb
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Data.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Helpers.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Mvc.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Razor.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Razor.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Data.pdb
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.xml
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Razor.xml
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.xml
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Razor.xml
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Helpers.xml
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Mvc.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csc.exe
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csc.exe.config
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csc.rsp
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csi.exe
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csi.rsp
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.AppContext.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\vbc.exe
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\vbc.exe.config
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\vbc.rsp
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Web.dll.config
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Web.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Web.pdb
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Data.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Helpers.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Mvc.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Razor.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Razor.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Data.pdb
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Razor.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Razor.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Helpers.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Mvc.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.csprojResolveAssemblyReference.cache
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.pdb
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.csproj.CoreCompileInputs.cache
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.csprojResolveAssemblyReference.cache
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csc.exe
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csc.exe.config
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csc.rsp
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csi.exe
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\csi.rsp
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.AppContext.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\vbc.exe
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\vbc.exe.config
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\vbc.rsp
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Web.dll.config
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Web.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Web.pdb
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Data.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Helpers.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Mvc.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Razor.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Razor.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Data.pdb
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Gradnik_Data.dll.config
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Razor.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Webpages.Razor.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Helpers.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\bin\System.Web.Mvc.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.csproj.CopyComplete
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Web\obj\Debug\Gradnik_Web.pdb

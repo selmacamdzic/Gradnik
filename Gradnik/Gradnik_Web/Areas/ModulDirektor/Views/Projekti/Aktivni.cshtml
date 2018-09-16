@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Gradnik_Data.Models.Projekti>
+
+<table class="table" id="aktivniProjekti">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PocetakProjekta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KrajProjekta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Investitor.Naziv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PocetakProjekta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KrajProjekta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Investitor.Naziv)
+                </td>
+                <td>
+                    @Html.ActionLink("Detalji", "Detalji", new { id = item.Id }) |
+                    @Html.ActionLink("Gradilista", "Index", "Gradiliste", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function () {
+        $('#aktivniProjekti').DataTable();
+    });
+</script>

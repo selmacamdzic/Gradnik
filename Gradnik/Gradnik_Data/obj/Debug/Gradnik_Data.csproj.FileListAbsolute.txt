@@ -1,0 +1,56 @@
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.dll.config
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.pdb
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.csprojResolveAssemblyReference.cache
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.pdb
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.Migration1.resources
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.csproj.GenerateResource.Cache
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.Migration2.resources
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.Migration3.resources
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.Migration4.resources
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.test.resources
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.Izmjena.resources
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.NovoPoljeRadnik.resources
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.Migracija1.resources
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.dll.config
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.pdb
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.xml
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.csprojResolveAssemblyReference.cache
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.dll
+C:\Users\Almir\Desktop\Gradnik_chart_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.pdb
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.dll.config
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.pdb
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.csprojResolveAssemblyReference.cache
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.dll
+C:\Users\Selma\Documents\Visual Studio 2015\Projects\Gradnik_selectable_form\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.pdb
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.csproj.CoreCompileInputs.cache
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.dll.config
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\Gradnik_Data.pdb
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.csproj.CopyComplete
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.dll
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.pdb
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.InitialCreate.resources
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.csproj.GenerateResource.cache
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.Removed_Staticke_Proracune.resources
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.Edit_ProjektStatus.resources
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.Remove_ProjektNaDokumentacija.resources
+C:\Users\Almir\Desktop\Gradnik_02.07.18\Gradnik_selectable_form\Gradnik\Gradnik_Data\obj\Debug\Gradnik_Data.Migrations.Edit_Gradiliste.resources

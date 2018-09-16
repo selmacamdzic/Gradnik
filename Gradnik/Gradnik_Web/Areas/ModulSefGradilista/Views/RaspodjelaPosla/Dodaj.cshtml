@@ -1,0 +1,46 @@
+﻿@model Gradnik_Web.Areas.ModulSefGradilista.Models.RaspodjelaPoslaDodajVM
+
+@{
+    ViewBag.Title = "Dodaj";
+}
+
+<h2>Dodaj radnika na gradiliste</h2>
+
+@using (Html.BeginForm("Spremi", "RaspodjelaPosla"))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="col-md-2 control-label">Odaberi radnika</label>
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.RadnikId, Model.listaRadnik, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RadnikId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.HiddenFor(model => model.GradilisteId)
+        <label class="col-md-2 control-label">Odaberi tip posla</label>
+        <div class="col-sm-5">
+            @Html.DropDownListFor(model => model.TipPoslaId, Model.TipPosla, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Opis, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-sm-5">
+            @Html.TextAreaFor(model => model.Opis, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Opis, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PocetakRada, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-sm-5">
+            @Html.EditorFor(model => model.PocetakRada, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PocetakRada, "", new { @class = "text-danger" })
+            <input type="submit" value="Spremi" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}

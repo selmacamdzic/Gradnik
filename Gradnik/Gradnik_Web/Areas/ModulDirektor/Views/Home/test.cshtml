@@ -1,0 +1,74 @@
+﻿@model Gradnik_Data.Models.RaspodjelaPosla
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>test</title>
+</head>
+<body>
+    <div>
+        <h4>RaspodjelaPosla</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Gradiliste.NazivProjekta)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Gradiliste.NazivProjekta)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Korisnik.KorisnickoIme)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Korisnik.KorisnickoIme)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Radnik.Ime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Radnik.Ime)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TipPosla.Naziv)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TipPosla.Naziv)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PocetakRada)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PocetakRada)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Opis)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Opis)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

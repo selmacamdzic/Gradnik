@@ -1,0 +1,158 @@
+﻿@model Gradnik_Web.Areas.ModulEngineering.Models.StatickiProracunAddVM
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    TempData["myObject"] = Model;
+}
+
+
+<div id="rootwizard"  class="form-horizontal form-wizard">
+
+    <div class="steps-progress">
+        <div class="progress-indicator"></div>
+    </div>
+
+    <ul>
+@if (Model.odradeneFaze.Where(x => x.fazaId == 1 && x.isOdradene == true) != null)
+{
+        <li class="next">
+            <a href="#tab1" data-toggle="tab"><span>1</span>First</a>
+        </li>
+}
+@if (Model.odradeneFaze.Where(x => x.fazaId == 1 && x.isOdradene == false) != null)
+{
+    <li>
+        <a href="#tab1" data-toggle="tab"><span>1</span>First</a>
+    </li>
+}
+        @if (Model.odradeneFaze.Where(x=>x.fazaId==2 && x.isOdradene==true)!=null)
+        {
+            <li class="active">
+                <a href="#tab2" data-toggle="tab"><span>2</span>Second</a>
+            </li>
+        }
+        @if (Model.odradeneFaze.Where(x => x.fazaId == 2 && x.isOdradene == false) != null)
+        {
+            <li >
+                <a href="#tab2" data-toggle="tab"><span>2</span>Second</a>
+            </li>
+        }
+
+        @if (Model.odradeneFaze.Where(x => x.fazaId == 3 && x.isOdradene == true) != null)
+        {
+            <li class="active">
+                <a href="#tab3" data-toggle="tab"><span>3</span>Third</a>
+            </li>
+        }
+
+        @if (Model.odradeneFaze.Where(x => x.fazaId == 3 && x.isOdradene == false) != null)
+        {
+            <li>
+                <a href="#tab3" data-toggle="tab"><span>3</span>Third</a>
+            </li>
+        }
+
+       @if (Model.odradeneFaze.Where(x => x.fazaId == 4 && x.isOdradene == true) != null)
+       {   <li class="active">
+                <a href="#tab4" data-toggle="tab"><span>4</span>Forth</a>
+            </li>
+        }
+        @if (Model.odradeneFaze.Where(x => x.fazaId == 4 && x.isOdradene == false) != null)
+        {
+        <li>
+            <a href="#tab4" data-toggle="tab"><span>4</span>Forth</a>
+        </li>
+        }
+
+       @if (Model.odradeneFaze.Where(x => x.fazaId == 5 && x.isOdradene == true) != null)
+       {
+            <li>
+                <a href="#tab5" data-toggle="tab"><span>5</span>Fifth</a>
+            </li>
+        }
+        @if (Model.odradeneFaze.Where(x => x.fazaId == 5 && x.isOdradene == false) != null)
+        {
+            <li>
+                <a href="#tab5" data-toggle="tab"><span>5</span>Fifth</a>
+            </li>
+        }
+   
+
+    </ul>
+
+    <div class="tab-content">
+
+    @using (Ajax.BeginForm("Save", "StatickiProracun", new AjaxOptions { UpdateTargetId = "ajax" }, new { @enctype = "multipart/form-data", @id = "myForm" }))
+    {
+        @Html.HiddenFor(model => model.TehnickiOpisId)
+        <div class="tab-pane active" id="tab1">
+
+
+            <div class="row" id="ajax">
+
+                <div class="form-group">
+                    <label for="field-ta" class="col-sm-3 control-label">Opis</label>
+
+                    <div class="col-sm-5">
+                        @Html.TextAreaFor(mode => Model.Proracun, new { id = "field-ta", @class = "form-control autogrow", @placeholder = "Proračun... . " })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="field-ta" class="col-sm-3 control-label">Opis</label>
+
+                    <div class="col-sm-5">
+                        @Html.TextAreaFor(mode => Model.Opis, new { id = "field-ta", @class = "form-control autogrow", @placeholder = "Proračun... . " })
+
+                    </div>
+                </div>
+               
+                <div id="ajax">
+                    @Html.Action("AddMaterial", "StatickiProracun",new { vm=Model});
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+        @*@if (Model.FazeId.Contains(2))
+        { <div class="tab-pane" id="tab2">2</div> }
+
+        @if (Model.FazeId.Contains(3))
+        { <div class="tab-pane" id="tab3">3</div> }
+        @if (Model.FazeId.Contains(4))
+        { <div class="tab-pane" id="tab4">4</div> }
+        @if (Model.FazeId.Contains(5))
+        {
+            <div class="tab-pane" id="tab5">5</div>
+        }
+        @if (Model.FazeId.Contains(6))
+        {<div class="tab-pane" id="tab6">6</div> }
+        @if (Model.FazeId.Contains(7))
+        {  <div class="tab-pane" id="tab7">7</div>}*@
+
+
+        @*<ul class="pager wizard">
+            <li class="previous first">
+                <a href="#">First</a>
+            </li>
+            <li class="previous">
+                <a href="#"><i class="entypo-left-open"></i> Previous</a>
+            </li>
+
+            <li class="next last">
+                <a href="#">Last</a>
+            </li>
+            <li class="next">
+                <a href="#">Next <i class="entypo-right-open"></i></a>
+            </li>
+        </ul>*@
+
+    </div>
+</div>
+
+<script src="~/assets/js/jquery.bootstrap.wizard.min.js"></script>
+<script src="~/assets/js/bootstrap-switch.min.js"></script>

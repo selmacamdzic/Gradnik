@@ -1,0 +1,50 @@
+﻿.well {
+    background-color: white;
+}
+
+.operation-form .global-search > input {
+    height: 50px;
+    border: 1px solid #c8c8c8;
+    background-color: #ffffff;
+    font-size: 16px;
+    color: #adadad;
+    line-height: 16px;
+    padding-left: 20px;
+}
+
+.operation-form .global-search > i {
+    font-size: 20px;
+    margin: 14px;
+    color: #b6b6b6;
+}
+
+.operation-form .btn-add {
+    height: initial;
+    float: right;
+    padding: 5px 12px;
+    margin-top: -2px;
+    border: 1px solid #e2e2e2 !important;
+    font-size: 15px;
+    color: #ffffff;
+    width: auto !important;
+}
+
+.operation-form .color-picker-hex {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.operation-form .load-device-block button {
+    margin-top: 28px;
+}
+
+.icon-content i {
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    display: block;
+    margin: 0 auto;
+}

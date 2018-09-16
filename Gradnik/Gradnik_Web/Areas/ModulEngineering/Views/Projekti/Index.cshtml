@@ -1,0 +1,145 @@
+﻿@model IEnumerable<Gradnik_Data.Models.Projekti>
+@using Gradnik_Data.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<table class="table table-hover table-bordered" id="table-1">
+    <thead>
+        <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Naziv</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Lokacija</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Projekta dokumentacija</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Tehnički opis</th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Projekti item in Model)
+        {
+            <tr class="odd gradeX" onclick="location.href = '@(Url.Action("Pregled", "Projekti", new { id = item.Id }))'">
+                <td>@item.Naziv</td>
+                <td>@item.Lokacija</td>
+                
+                @if (item.ProjektnaDokumentacija == null)
+                {
+                    <td> @Html.ActionLink("Dodaj","Add", "ProjektnaDokumentacija", new { id=item.Id}, new { @class = "btn btn-blue"  })</td>
+
+                
+
+                }
+                else
+                {
+                <td>
+                    <button style="margin-left: 50%" class="btn btn-success">
+                        <i class="entypo-check"></i>
+                    </button>
+                </td>
+
+	}
+               @if (item.TehnickiOpis == null)
+               {
+              <td>  @Html.ActionLink("Dodaj", "Add", "TehnickiOpis", new { id = item.Id }, new { @class = "btn btn-blue" })</td>
+               }
+               else
+               {
+                   <td><button style="align-content:center" class="btn btn-success">
+    <i class="entypo-check"></i>
+</button></td>
+               
+               }
+
+
+            </tr>
+
+        }
+
+
+
+
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Naziv</th>
+            <th>Lokacija</th>
+            <th>Projekta dokumentacija</th>
+            <th>Tehnički opis</th>
+        </tr>
+    </tfoot>
+</table>
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function otvoriDialog() {
+        $('#basicModal').modal();
+    }
+
+  
+        
+</script>
+
+
+
+<script type="text/javascript">
+
+  
+    var responsiveHelper;
+    var breakpointDefinition = {
+        tablet: 1024,
+        phone: 480
+    };
+    var tableContainer;
+
+    jQuery(document).ready(function ($) {
+
+        tableContainer = $("#table-1");
+
+        tableContainer.dataTable({
+            "sPaginationType": "bootstrap",
+            "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "bStateSave": true,
+
+
+            // Responsive Settings
+            bAutoWidth: false,
+            fnPreDrawCallback: function () {
+                // Initialize the responsive datatables helper once.
+                if (!responsiveHelper) {
+
+                    responsiveHelper = new ResponsiveDatatablesHelper(tableContainer, breakpointDefinition);
+                }
+            },
+            fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                responsiveHelper.createExpandIcon(nRow);
+            },
+            fnDrawCallback: function (oSettings) {
+                responsiveHelper.respond();
+            }
+        });
+
+
+        $(".dataTables_wrapper select").select2({
+            minimumResultsForSearch: -1
+        });
+    });
+
+   
+</script>
+
+<style>
+    tr {
+    cursor:pointer;
+    }
+</style>

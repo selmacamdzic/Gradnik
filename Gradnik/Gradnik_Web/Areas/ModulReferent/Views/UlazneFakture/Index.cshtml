@@ -1,0 +1,127 @@
+﻿@model IEnumerable<Gradnik_Data.Models.UlaznaFaktura>
+@using Gradnik_Data.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<table class="table table-hover table-bordered" id="table-1">
+    <thead>
+        <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Datum kreiranja</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Broj fakture</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Iznos</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (UlaznaFaktura item in Model)
+            {
+
+            <tr class="odd gradeX">
+
+                <td>@item.DatumKreiranja.ToString("dd.mm.yyyy")</td>
+                <td>@item.BrojFakture</td>
+                <td>@item.Iznos @item.Valuta</td>
+
+
+
+                <td>
+
+                    @Ajax.ActionLink("Detalji", "Details", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
+
+                  
+                    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div id="ajaxDialog"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Datum kreiranja</th>
+            <th>Broj fakture</th>
+            <th>Iznos</th>
+            <th>Akcija</th>
+
+        </tr>
+    </tfoot>
+</table>
+
+<div>
+
+    @Html.ActionLink("Kreiraj novu", "Dodaj", null, new { @class = "btn btn-blue" })
+   
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    function otvoriDialog() {
+        $('#basicModal').modal();
+    }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    var responsiveHelper;
+    var breakpointDefinition = {
+        tablet: 1024,
+        phone: 480
+    };
+    var tableContainer;
+
+    jQuery(document).ready(function ($) {
+
+        tableContainer = $("#table-1");
+
+        tableContainer.dataTable({
+            "sPaginationType": "bootstrap",
+            "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "bStateSave": true,
+
+
+            // Responsive Settings
+            bAutoWidth: false,
+            fnPreDrawCallback: function () {
+                // Initialize the responsive datatables helper once.
+                if (!responsiveHelper) {
+
+                    responsiveHelper = new ResponsiveDatatablesHelper(tableContainer, breakpointDefinition);
+                }
+            },
+            fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                responsiveHelper.createExpandIcon(nRow);
+            },
+            fnDrawCallback: function (oSettings) {
+                responsiveHelper.respond();
+            }
+        });
+
+
+        $(".dataTables_wrapper select").select2({
+            minimumResultsForSearch: -1
+        });
+    });
+</script>
+
+
+
+
+

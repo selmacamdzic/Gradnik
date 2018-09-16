@@ -1,0 +1,54 @@
+﻿@model Gradnik_Web.Areas.ModulDirektor.Models.WorkInfoVM
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>test</title>
+</head>
+<body>
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayName("Gradilište : ")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.workInfo.workareaName)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Pozicija : ")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.workInfo.jobtitle)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Početak : ")
+            </dt>
+
+            <dd>
+                @Html.DisplayNameFor(model => model.workInfo.startDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Odrađeni sati : ")
+            </dt>
+
+            <dd>
+                @Html.DisplayNameFor(model => model.workInfo.hours)
+            </dd>
+
+           
+
+        </dl>
+    </div>
+  
+</body>
+</html>

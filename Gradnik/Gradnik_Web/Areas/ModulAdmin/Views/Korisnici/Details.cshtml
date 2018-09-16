@@ -1,0 +1,104 @@
+﻿@model Gradnik_Data.Models.Korisnici
+
+@{
+    ViewBag.Title = "Details";
+    Layout = null;
+
+}
+
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h4 class="modal-title" id="myModalLabel">Detalji</h4>
+</div>
+
+
+<div class="modal-body">
+    <div class="form-group">
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayName("Pozicija")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KorisnikPozicija.Naziv)
+            </dd>
+            <dt>
+                @Html.DisplayName("Aktivan: ")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.isActive)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Korisničko ime")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KorisnickoIme)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Ime i prezime")
+            </dt>
+
+            <dd>
+                @Html.Display(Model.Ime + " " + Model.Prezime)
+            </dd>
+
+
+
+            <dt>
+                @Html.DisplayName("Datum rođenja")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DatumRodjenja)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Zanimanje")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StrucnoZanimanje)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Adresa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Adresa)
+            </dd>
+
+            <dt>
+                @Html.DisplayName("Kontakt telefon")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KontaktTelefon)
+            </dd>
+
+
+
+
+
+        </dl>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Zatvori</button>
+</div>
+

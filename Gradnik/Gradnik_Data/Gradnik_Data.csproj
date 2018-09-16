@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BAB89FAE-B221-4D84-BE25-E2B38EF57CA1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gradnik_Data</RootNamespace>
+    <AssemblyName>Gradnik_Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201808182113133_InitialCreate.cs" />
+    <Compile Include="Migrations\201808182113133_InitialCreate.Designer.cs">
+      <DependentUpon>201808182113133_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809152111073_Removed_Staticke_Proracune.cs" />
+    <Compile Include="Migrations\201809152111073_Removed_Staticke_Proracune.Designer.cs">
+      <DependentUpon>201809152111073_Removed_Staticke_Proracune.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809152126000_Edit_ProjektStatus.cs" />
+    <Compile Include="Migrations\201809152126000_Edit_ProjektStatus.Designer.cs">
+      <DependentUpon>201809152126000_Edit_ProjektStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809160721030_Remove_ProjektNaDokumentacija.cs" />
+    <Compile Include="Migrations\201809160721030_Remove_ProjektNaDokumentacija.Designer.cs">
+      <DependentUpon>201809160721030_Remove_ProjektNaDokumentacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809160827231_Edit_Gradiliste.cs" />
+    <Compile Include="Migrations\201809160827231_Edit_Gradiliste.Designer.cs">
+      <DependentUpon>201809160827231_Edit_Gradiliste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Dobavljaci.cs" />
+    <Compile Include="Models\Gradiliste.cs" />
+    <Compile Include="Models\Investitori.cs" />
+    <Compile Include="Models\Izlaz.cs" />
+    <Compile Include="Models\IzlazStavke.cs" />
+    <Compile Include="Models\Izvjestaji.cs" />
+    <Compile Include="Models\Korisnici.cs" />
+    <Compile Include="Models\KorisnikPozicija.cs" />
+    <Compile Include="Models\MaterijalDostupni.cs" />
+    <Compile Include="Models\Materijal.cs" />
+    <Compile Include="Models\NarudbzbaStavka.cs" />
+    <Compile Include="Models\Narudzba.cs" />
+    <Compile Include="Models\Projekti.cs" />
+    <Compile Include="Models\Radnici.cs" />
+    <Compile Include="Models\RaspodjelaPosla.cs" />
+    <Compile Include="Models\Sati.cs" />
+    <Compile Include="Models\Skladiste.cs" />
+    <Compile Include="Models\TipPosla.cs" />
+    <Compile Include="Models\Ulaz.cs" />
+    <Compile Include="Models\UlazStavka.cs" />
+    <Compile Include="MojContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808182113133_InitialCreate.resx">
+      <DependentUpon>201808182113133_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809152111073_Removed_Staticke_Proracune.resx">
+      <DependentUpon>201809152111073_Removed_Staticke_Proracune.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809152126000_Edit_ProjektStatus.resx">
+      <DependentUpon>201809152126000_Edit_ProjektStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809160721030_Remove_ProjektNaDokumentacija.resx">
+      <DependentUpon>201809160721030_Remove_ProjektNaDokumentacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809160827231_Edit_Gradiliste.resx">
+      <DependentUpon>201809160827231_Edit_Gradiliste.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

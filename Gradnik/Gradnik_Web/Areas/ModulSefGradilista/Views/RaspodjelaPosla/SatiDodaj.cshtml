@@ -1,0 +1,82 @@
+﻿@model Gradnik_Web.Areas.ModulSefGradilista.Models.PrikazRadnikaVM
+@using Gradnik_Web.Areas.ModulSefGradilista.Models
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-9 col-sm-7">
+        <h2>Zaduženi radnici</h2>
+    </div>
+
+    <div class="col-md-3 col-sm-5">
+        @using (Html.BeginForm("Pretraga", "RaspodjelaPosla", FormMethod.Get, new { @class = "search-form-full" }))
+        {
+            @Html.HiddenFor(model => model.tiposlaId)
+            @Html.HiddenFor(model => model.gradilisteId)
+            <div class="form-group">
+                <input type="text" class="form-control" name="s" id="search-input" placeholder="Search..." /> <i class="entypo-search"></i>
+            </div>
+        }
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="col-md-9 col-sm-7">
+        <h4>Sati</h4>
+    </div>
+
+    <div class="col-md-3 col-sm-5">
+
+@using (Html.BeginForm("Pretraga", "RaspodjelaPosla", FormMethod.Get, new { @class = "search-form-full" }))
+{
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Middle Label</label>
+            <div class="col-sm-5">
+                <div class="make-switch" data-text-label="<i class='entypo-user'></i>">
+                    <input type="checkbox" checked />
+                </div>
+            </div>
+        </div>
+
+       
+            @Html.HiddenFor(model => model.tiposlaId)
+            @Html.HiddenFor(model => model.gradilisteId)
+            <div class="form-group">
+                <input type="text" class="form-control" name="s" placeholder="Sati..." /> <i class="entypo-clock"></i>
+            </div>
+        }
+    </div>
+
+
+</div>
+
+@foreach (PrikazRadnikaRow x in Model.listaRadnika)
+{
+    <div class="member-entry">
+        <a href="http://demo.neontheme.com/extra/timeline/" class="member-img"> <img src="http://demo.neontheme.com/assets/images/member-1.jpg" class="img-rounded" /> <i class="entypo-forward"></i> </a>
+        <div class="member-details">
+            <h4> <a href="http://demo.neontheme.com/extra/timeline/">@x.imePrezime</a> </h4>
+            <div class="row info-list">
+                <div class="col-sm-4"> <i class="entypo-briefcase"></i> Zvanje :<a href="#">@x.Zvanje</a> </div>
+                <div class="col-sm-4"> <i class="entypo-user"></i> <a href="#">@x.JMBG</a> </div>
+                <div class="col-sm-4"> <i class="entypo-calendar"></i> <a href="#">@x.DatumRodjenja</a> </div>
+                <div class="clear"></div>
+                <div class="col-sm-4"> <i class="entypo-location"></i> <a href="#">@x.Grad</a> </div>
+                <div class="col-sm-4"> <i class="entypo-mail"></i> <a href="#">@x.Email</a> </div>
+                <div class="col-sm-4"> <i class="entypo-phone"></i> <a href="#">@x.KontaktTelefon</a> </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+

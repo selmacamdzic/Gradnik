@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Gradnik_Data.Models.Projekti>
+@using Gradnik_Data.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<h2>Realizovani projekti</h2>
+<hr />
+
+<table class="table table-hover table-bordered" id="table-1">
+    <thead>
+        <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Naziv</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Lokacija</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Početak</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Kraj</th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Projekti item in Model)
+        {
+            <tr class="odd gradeX" onclick="location.href = '@(Url.Action("Pregled", "Projekti", new { id = item.Id }))'">
+                <td>@item.Naziv</td>
+                <td>@item.Lokacija</td>
+                <td>@item.PocetakProjekta.ToString("dd.MM.yyyy")</td>
+             <td>@item.KrajProjekta.ToString("dd.MM.yyyy")</td>
+
+
+            </tr>
+
+        }
+
+
+
+
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Naziv</th>
+            <th>Lokacija</th>
+            <th>Početak</th>
+            <th>Kraj</th>
+        </tr>
+    </tfoot>
+</table>
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function otvoriDialog() {
+        $('#basicModal').modal();
+    }
+
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+
+    var responsiveHelper;
+    var breakpointDefinition = {
+        tablet: 1024,
+        phone: 480
+    };
+    var tableContainer;
+
+    jQuery(document).ready(function ($) {
+
+        tableContainer = $("#table-1");
+
+        tableContainer.dataTable({
+            "sPaginationType": "bootstrap",
+            "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "bStateSave": true,
+
+
+            // Responsive Settings
+            bAutoWidth: false,
+            fnPreDrawCallback: function () {
+                // Initialize the responsive datatables helper once.
+                if (!responsiveHelper) {
+
+                    responsiveHelper = new ResponsiveDatatablesHelper(tableContainer, breakpointDefinition);
+                }
+            },
+            fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                responsiveHelper.createExpandIcon(nRow);
+            },
+            fnDrawCallback: function (oSettings) {
+                responsiveHelper.respond();
+            }
+        });
+
+
+        $(".dataTables_wrapper select").select2({
+            minimumResultsForSearch: -1
+        });
+    });
+
+
+</script>
+
+<style>
+    tr {
+        cursor: pointer;
+    }
+</style>

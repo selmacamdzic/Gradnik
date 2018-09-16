@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Gradnik_Data.Models.Gradiliste>
+
+<table class="table" id="gradilistaTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Naziv projekta")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opstina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostanskiBroj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Projekti.Naziv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Opstina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostanskiBroj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresa)
+                </td>
+                <td>
+                    @Html.ActionLink("Dodaj radnika", "Dodaj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, null) |
+                    @Html.ActionLink("Evidentiraj radno vrijeme", "Evidentiraj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, null)
+                    @Html.ActionLink("Evidentiraj utrosak materijala", "Evidentiraj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function () {
+        $('#gradilistaTable').DataTable();
+    });
+</script>

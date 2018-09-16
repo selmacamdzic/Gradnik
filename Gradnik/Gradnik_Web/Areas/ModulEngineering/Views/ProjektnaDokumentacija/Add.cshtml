@@ -1,0 +1,132 @@
+﻿@model Gradnik_Web.Areas.ModulEngineering.Models.ProjektnaDokumentacijaAddVM
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Save", "ProjektnaDokumentacija",FormMethod.Post, new { @enctype = "multipart/form-data", @id = "myForm" }))
+{
+<div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-primary" data-collapsed="0">
+
+                <div class="panel-heading">
+                    <div class="panel-title">
+                      Projektna dokumentacija
+                    </div>
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="form-horizontal form-groups-bordered">
+
+                        @Html.HiddenFor(model => model.projekatId);
+                        <div class="form-group">
+                            <label for="field-ta" class="col-sm-3 control-label">Opis</label>
+
+                            <div class="col-sm-5">
+                                @Html.TextAreaFor(mode=>Model.Opis,new { id= "field-ta",@class="form-control autogrow",@placeholder="Unesite opis projekcija . "})
+                               
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Crtež osnova</label>
+
+                            <div class="col-sm-5">
+
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <span class="btn btn-info btn-file">
+                                        <span class="fileinput-new">Select file</span>
+                                        <span class="fileinput-exists">Change</span>
+                                        <input type="file" value="" id="CrtezOsnova" accept=".png, .jpg, .jpeg, .bm" name="CrtezOsnova" required />
+                                        
+                                    </span>
+                                    <span class="fileinput-filename"></span>
+                                    <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Crtež presjek</label>
+
+                            <div class="col-sm-5">
+
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <span class="btn btn-info btn-file">
+                                        <span class="fileinput-new">Select file</span>
+                                        <span class="fileinput-exists">Change</span>
+                                        <input type="file" value="" id="CrtezPresjek"  accept=".png, .jpg, .jpeg, .bm" name="CrtezPresjek" required />
+                                    </span>
+                                    <span class="fileinput-filename"></span>
+                                    <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Crtež krov</label>
+
+                            <div class="col-sm-5">
+
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <span class="btn btn-info btn-file">
+                                        <span class="fileinput-new">Select file</span>
+                                        <span class="fileinput-exists">Change</span>
+                                        <input type="file" value="" id="CrtezKrov" accept=".png, .jpg, .jpeg, .bm" name="CrtezKrov" required />
+                                    </span>
+                                    <span class="fileinput-filename"></span>
+                                    <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Crtež fasada</label>
+
+                            <div class="col-sm-5">
+
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <span class="btn btn-info btn-file">
+                                        <span class="fileinput-new">Select file</span>
+                                        <span class="fileinput-exists">Change</span>
+                                        <input type="file" value="" id="CrtezFasada" accept=".png, .jpg, .jpeg, .bm" name="CrtezFasada" required />
+                                    </span>
+                                    <span class="fileinput-filename"></span>
+                                    <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                      
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+    
+    </div>
+
+}
+
+
+<script src="assets/js/fileinput.js"></script>
+
+
+

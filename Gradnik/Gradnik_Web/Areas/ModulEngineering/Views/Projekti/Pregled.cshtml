@@ -1,0 +1,232 @@
+﻿@model Gradnik_Data.Models.Projekti
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>@Model.Naziv - @Model.Lokacija</h4>
+    <hr />
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">Info</div>
+
+                    <div class="panel-options">
+                        <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+                        <a href="#" data-rel="close" class="bg"><i class="entypo-cancel"></i></a>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+
+
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayName("Trajanje")
+                        </dt>
+
+                        <dd>
+                            <div class="well">
+                               @Model.PocetakProjekta.ToString("dd.MM.yyyy") - @Model.KrajProjekta.ToString("dd.MM.yyyy")
+                            </div>
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Investitor)
+                        </dt>
+
+                        <dd>
+                            <div class="well">
+                                 @Model.Investitor
+                            </div>
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayName("Datum potpisa ugovora")
+                        </dt>
+
+                        <dd>
+                            <div class="well">
+                                @Model.DatumUgovora.ToString("dd.MM.yyyy")
+                            </div>
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayName("Poslovođa")
+                        </dt>
+
+                        <dd>
+                            <div class="well">
+                                @Model.Korisnik.Ime @Model.Korisnik.Prezime
+                            </div>
+                        </dd>
+
+                    </dl>
+
+                   
+                    
+                  
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model.ProjektnaDokumentacija != null)
+{
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">Projektna dokumentacija</div>
+
+                    <div class="panel-options">
+                        <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+                        <a href="#" data-rel="close" class="bg"><i class="entypo-cancel"></i></a>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <p><strong>Opis</strong></p>
+                            <blockquote>
+                                <p>
+
+                                    <br />
+                                    @Model.ProjektnaDokumentacija.Opis
+                                </p>
+                            </blockquote>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model.TehnickiOpis != null)
+{
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">Tehnički opis</div>
+
+                    <div class="panel-options">
+                        <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+                        <a href="#" data-rel="close" class="bg"><i class="entypo-cancel"></i></a>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <p><strong>Namjena objekta</strong></p>
+                            <blockquote>
+                                <p>
+
+                                    <br />
+                                    @Model.TehnickiOpis.NamjenaObjekta
+                                </p>
+                            </blockquote>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <p><strong>Opis</strong></p>
+                            <blockquote>
+                                <p>
+
+                                    <br />
+                                    @Model.TehnickiOpis.NamjenaObjekta
+                                </p>
+                            </blockquote>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <p><strong>Izvještaj</strong></p>
+                            <blockquote>
+                                <p>
+
+                                    <br />
+                                    @Model.TehnickiOpis.Izvjestaj
+                                </p>
+                            </blockquote>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <p><strong>Ostali radovi</strong></p>
+                            <blockquote>
+                                <p>
+
+                                    <br />
+                                    @Model.TehnickiOpis.OstaliRadovi
+                                </p>
+                            </blockquote>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <p><strong>Održavanje</strong></p>
+                            <blockquote>
+                                <p>
+
+                                    <br />
+                                    @Model.TehnickiOpis.Odrzavanje
+                                </p>
+                            </blockquote>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <p><strong>Vijek trajanja</strong></p>
+                            <blockquote>
+                                <p>
+
+                                    <br />
+                                    @Model.TehnickiOpis.VijekTrajanja
+                                </p>
+                            </blockquote>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

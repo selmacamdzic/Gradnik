@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Gradnik_Data.Models.Materijal>
+@using Gradnik_Data.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<table class="table table-hover table-bordered" id="materijaliTable">
+    <thead>
+        <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Naziv</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Opis</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr class="odd gradeX">
+
+                <td>@item.Naziv</td>
+                <td>@item.Opis</td>
+
+
+                <td>
+
+                    @Ajax.ActionLink("Uredi", "Uredi", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-info btn-sm entypo-pencil" })
+
+                    @Html.ActionLink("Obriši", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm entypo-cancel", onclick = "return confirm('Da li ste sigurni da želite izbrisati odabrani materijal ?')" })
+
+
+                    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div id="ajaxDialog"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Naziv</th>
+            <th>Opis</th>
+            <th>Akcija</th>
+
+        </tr>
+    </tfoot>
+</table>
+
+<div>
+
+    @Html.ActionLink("Dodaj novi materijal", "Dodaj", null, new { @class = "btn btn-blue" })
+    @*<button type="button" class="btn btn-default btn-icon icon-left">
+            <i class="entypo-user-add"></i>
+        </button>*@
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#materijaliTable').DataTable();
+    });
+</script>

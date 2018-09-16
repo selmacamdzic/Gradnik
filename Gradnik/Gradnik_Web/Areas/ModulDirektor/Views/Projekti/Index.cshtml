@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Gradnik_Data.Models.Projekti>
+@using Gradnik_Data.Models
+
+<table class="table table-hover table-bordered" id="projektiLista">
+    <thead>
+        <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Naziv</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Lokacija</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Datum ugovora</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Očekivani kraj</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Poslovođa</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Projekti item in Model)
+        {
+            <tr class="odd gradeX" onclick="location.href = '@(Url.Action("Pregled", "Projekti", new { id = item.Id }))'">
+                <td>@item.Naziv</td>
+                <td>@item.Lokacija</td>
+                <td>@item.DatumUgovora.ToString("dd.MM.yyyy")</td>
+                <td>@item.KrajProjekta.ToString("dd.MM.yyyy")</td>
+            </tr>
+
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Naziv</th>
+            <th>Lokacija</th>
+            <th>Datum ugovora</th>
+            <th>Očekivani kraj</th>
+            <th>Poslovođa</th>
+        </tr>
+    </tfoot>
+</table>
+
+<script type="text/javascript">
+    function otvoriDialog() {
+        $('#basicModal').modal();
+    }
+
+    $(document).ready(function () {
+        $('#projektiLista').DataTable();
+    });
+  
+</script>
