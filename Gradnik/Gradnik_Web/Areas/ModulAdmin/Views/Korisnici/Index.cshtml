@@ -7,125 +7,71 @@
 }
 
 
-    <table class="table table-hover table-bordered" id="table-1">
-        <thead>
-            <tr>
-                <th style="background-color:rgb(48, 54, 65); color:white;">Pozicija</th>
-                <th style="background-color:rgb(48, 54, 65); color:white;">Ime i Prezime</th>
-                <th style="background-color:rgb(48, 54, 65); color:white;">Korisničko ime</th>
-                <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
+<table class="table table-hover table-bordered" id="korisniciTable">
+    <thead>
+        <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Ime i Prezime</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Korisničko ime</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
 
 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Korisnici item in Model)
+        {
+
+            <tr class="odd gradeX">
+                <td>@item.Ime @item.Prezime</td>
+                <td>@item.KorisnickoIme</td>
+                <td>
+                    @Ajax.ActionLink("Detalji", "Details", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
+
+                    @Ajax.ActionLink("Uredi", "Uredi", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-info btn-sm entypo-pencil" })
+                    @Html.ActionLink("Obriši", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm entypo-cancel", onclick = "return confirm('Da li ste sigurni da želite izbrisati odabranog korisnika ?')" })
+
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (Korisnici item in Model)
-            {
+        }
 
-                <tr class="odd gradeX">
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Ime i Prezime</th>
+            <th>Korisničko ime</th>
+            <th>Akcija</th>
 
-                    <td>@item.KorisnikPozicija.Naziv</td>
-                    <td>@item.Ime @item.Prezime</td>
-                    <td>@item.KorisnickoIme</td>
+        </tr>
+    </tfoot>
+</table>
 
-
-
-                    <td>
-
-                        @Ajax.ActionLink("Detalji", "Details", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
-
-                        @Ajax.ActionLink("Uredi", "Uredi", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-info btn-sm entypo-pencil" })
-                        @Html.ActionLink("Obriši", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm entypo-cancel", onclick = "return confirm('Da li ste sigurni da želite izbrisati odabranog korisnika ?')" })
-
-                        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div id="ajaxDialog"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </td>
-                </tr>
-            }
+<div>
+    @Html.ActionLink("Dodaj novog korisnika", "Dodaj", null, new { @class = "btn btn-success" })
+</div>
 
 
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Pozicija</th>
-                <th>Ime i Prezime</th>
-                <th>Korisničko ime</th>
-                <th>Akcija</th>
 
-            </tr>
-        </tfoot>
-    </table>
-
-    <div>
-
-        @Html.ActionLink("Dodaj novog korisnika", "Dodaj", null, new { @class = "btn btn-blue" })
-        @*<button type="button" class="btn btn-default btn-icon icon-left">
-                <i class="entypo-user-add"></i>
-            </button>*@
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="ajaxDialog"></div>
+        </div>
     </div>
-
-
-
+</div>
 
 
 <script type="text/javascript">
     function otvoriDialog() {
         $('#basicModal').modal();
     }
-</script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-    var responsiveHelper;
-    var breakpointDefinition = {
-        tablet: 1024,
-        phone: 480
-    };
-    var tableContainer;
-
-    jQuery(document).ready(function ($) {
-
-        tableContainer = $("#table-1");
-
-        tableContainer.dataTable({
-            "sPaginationType": "bootstrap",
-            "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-            "bStateSave": true,
-
-
-            // Responsive Settings
-            bAutoWidth: false,
-            fnPreDrawCallback: function () {
-                // Initialize the responsive datatables helper once.
-                if (!responsiveHelper) {
-
-                    responsiveHelper = new ResponsiveDatatablesHelper(tableContainer, breakpointDefinition);
-                }
-            },
-            fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-                responsiveHelper.createExpandIcon(nRow);
-            },
-            fnDrawCallback: function (oSettings) {
-                responsiveHelper.respond();
-            }
-        });
-
-
-        $(".dataTables_wrapper select").select2({
-            minimumResultsForSearch: -1
-        });
+    $(document).ready(function () {
+        var table = $('#korisniciTable').DataTable();
     });
 </script>
 
-
-
-
-
+<style>
+    .modal-dialog {
+        width: 900px
+    }
+</style>

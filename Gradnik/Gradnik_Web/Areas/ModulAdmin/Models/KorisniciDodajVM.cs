@@ -23,6 +23,7 @@ namespace Gradnik_Web.Areas.ModulAdmin.Models
         public string Prezime { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime DatumRodjenja { get; set; }
         public string StrucnoZanimanje { get; set; }
 
@@ -35,5 +36,6 @@ namespace Gradnik_Web.Areas.ModulAdmin.Models
         [Required]
         public int KorisnikPozicijaId { get; set; }
         public List<SelectListItem> listaPozicija;
+
     }
 }

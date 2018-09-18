@@ -1,13 +1,13 @@
-﻿@model IEnumerable<Gradnik_Data.Models.Ulaz>
+﻿@model IEnumerable<Gradnik_Data.Models.Izlaz>
 
 
-<table class="table table-hover table-bordered" id="procesiraniUlazi">
+<table class="table table-hover table-bordered" id="procesiraniIzlazi">
     <thead>
         <tr>
             <th style="background-color:rgb(48, 54, 65); color:white;">Datum kreiranja</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Broj fakture</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Skladiste</th>
-            <th style="background-color:rgb(48, 54, 65); color:white;">Iznos</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Gradiliste</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
         </tr>
     </thead>
@@ -19,10 +19,10 @@
                 <td>@item.DatumKreiranja.ToString("dd.mm.yyyy")</td>
                 <td>@item.BrojFakture</td>
                 <td>@item.Skladiste.Naziv</td>
-                <td>@item.Iznos KM</td>
+                <td>@item.Gradiliste.Grad - @item.Gradiliste.Adresa</td>
                 <td>
                     @Ajax.ActionLink("Detalji", "Detalji", new { id = item.Id },
-                                   new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess= "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
+                                        new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
                 </td>
             </tr>
         }
@@ -32,7 +32,7 @@
             <th style="background-color:rgb(48, 54, 65); color:white;">Datum kreiranja</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Broj fakture</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Skladiste</th>
-            <th style="background-color:rgb(48, 54, 65); color:white;">Iznos</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Gradiliste</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
         </tr>
     </tfoot>
@@ -51,7 +51,7 @@
     }
 
     $(document).ready(function () {
-        var table = $('#procesiraniUlazi').DataTable();
+        var table = $('#procesiraniIzlazi').DataTable();
     });
 </script>
 

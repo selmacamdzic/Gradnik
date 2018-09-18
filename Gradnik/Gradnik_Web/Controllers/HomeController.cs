@@ -29,19 +29,19 @@ namespace Gradnik_Web.Controllers
             {
                 return RedirectToAction("Index", "Login", new { area = "" });
             }
-            if (k.isAdmin)
+            if (k.KorisnikUloga == KorisnikUloga.Admin)
             {
                 return RedirectToAction("Prikaz", "Home", new { area = "ModulAdmin" });
             }
-            if (k.isDirektor)
+            if (k.KorisnikUloga == KorisnikUloga.Direktor)
             {
                 return RedirectToAction("Prikaz", "Home", new { area = "ModulDirektor" });
             }
-            if (k.isGradjevinskiIng || k.isArhitekta)
+            if (k.KorisnikUloga == KorisnikUloga.Arhitekta)
             {
                 return RedirectToAction("Index", "Projekti", new { area = "ModulEngineering" });
             }
-            if (k.isReferent)
+            if (k.KorisnikUloga == KorisnikUloga.Referent)
             {
                 return RedirectToAction("Index", "UlazneFakture", new { area = "ModulReferent" });
             }

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Gradnik_Data.Models.UlazStavka>
+
+@{
+    Layout = null;
+}
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Materijal</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Kolicina</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="odd gradeX">
+                <td>@item.Materijal.Naziv</td>
+                <td>@item.Kolicina</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Naziv</th>
+            <th>Kolicina</th>
+        </tr>
+    </tfoot>
+</table>

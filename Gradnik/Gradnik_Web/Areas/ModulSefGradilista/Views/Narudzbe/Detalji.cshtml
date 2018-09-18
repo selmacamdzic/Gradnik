@@ -1,43 +1,85 @@
 ﻿@model Gradnik_Web.Areas.ModulSefGradilista.Models.NarudzbaDetaljiViewModel
 
-@Html.DropDownListFor(model => model.DobavljaciId, Model.Dobavljaci, "Odaberite dobavljaca", 
-                       new { @class = "form-control" })
+@Html.DropDownListFor(model => model.DobavljaciId, Model.Dobavljaci,
+                       new { @class = "form-control", @id = "dobavljacId" })
+
+@Html.DropDownListFor(model => model.SkladisteId, Model.Skladiste,
+                       new { @class = "form-control", @id = "skladisteId" })
+
+@Html.HiddenFor(model => model.Id, new { @id = "narudzbaId" })
+
+@Html.TextBoxFor(model => model.BrojFakture, new { @id = "brojFakture" })
 
 <table class="table table-hover table-bordered" id="narudzbeDetalji">
     <thead>
         <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Id</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Naziv</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Kolicina</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Cijena</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Stavke)
+        @for (int i = 0; i < Model.Stavke.Count; i++)
         {
-
             <tr class="odd gradeX">
-
-                <td>@item.Naziv</td>
-                <td>@item.Kolicina</td>
-                <td><input type="text" name="name" value="1" /></td>
+                <td>@Model.Stavke[i].MaterijalId</td>
+                <td>@Model.Stavke[i].Naziv</td>
+                <td>@Model.Stavke[i].Kolicina</td>
+                <td><input type="text" id="cijena@(i)" value="1" /></td>
             </tr>
         }
-
 
     </tbody>
     <tfoot>
         <tr>
+            <th>Id</th>
             <th>Naziv</th>
             <th>Kolicina</th>
             <th>Cijena</th>
         </tr>
     </tfoot>
 </table>
-<button class="btn btn-success">Procesiraj</button>
-<button class="btn btn-success">Otkazi</button>
+<button class="btn btn-success" id="procesiraj">Procesiraj</button>
+<button class="btn btn-success" id="otkazi">Otkazi</button>
 
 <script>
+    var narudzbaList = [];
     $(document).ready(function () {
-        $('#dobavljaciTable').DataTable();
+        var table = $('#narudzbeDetalji').DataTable();
+
+        $('#procesiraj').click(function () {
+            for (var i = 0; i < table.data().length; i++) {
+                narudzbaList.push({
+                    materijalId: table.data()[i][0],
+                    kolicina: table.data()[i][2],
+                    cijena: parseFloat($('#cijena' + i).val())
+                });
+            }
+            console.log(narudzbaList);
+        });
+
+        $('#procesiraj').click(function () {
+
+            $.ajax({
+                type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                url: '/ModulSefGradilista/Narudzbe/Procesiraj', // the url where we want to POST
+                data: JSON.stringify({
+                    stavke: narudzbaList,
+                    dobavljacId: $("#dobavljacId").val(),
+                    skladisteId: $("#skladisteId").val(),
+                    narudzbaId: $("#narudzbaId").val(),
+                    brojFakture: $("#brojFakture").val()
+                }), // our data object
+                contentType: 'application/json',
+            })
+                // using the done promise callback
+                .done(function (data) {
+                    console.log(data);
+                });
+            event.preventDefault();
+        });
+
     });
+
 </script>

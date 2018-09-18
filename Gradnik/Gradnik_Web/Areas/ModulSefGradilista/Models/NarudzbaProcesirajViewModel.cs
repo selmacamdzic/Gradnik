@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace Gradnik_Web.Areas.ModulSefGradilista.Models
 {
     public class NarudzbaProcesirajViewModel
     {
-        public int Id { get; set; }
+        public int NarudzbaId { get; set; }
         public string BrojFakture { get; set; }
         public int DobavljacId { get; set; }
         public decimal Iznos { get; set; }
         public List<NarudzbaCijenaStavkeViewModel> Stavke { get; set; }
-        public int SkladisteId { get; internal set; }
+        public int SkladisteId { get; set; }
     }
 
     public class NarudzbaCijenaStavkeViewModel

@@ -76,12 +76,19 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
                             .Select(x => new NarudzbaStavkeViewModel
                             {
                                 Kolicina = x.Kolicina,
+                                MaterijalId = x.Materijal.Id,
                                 Naziv = x.Materijal.Naziv
                             })
                             .ToList(),
-                Dobavljaci = ctx.Dobavljaci.Select(x=> new SelectListItem
+                Dobavljaci = ctx.Dobavljaci.Select(x => new SelectListItem
                 {
-                    Text = x.Naziv,
+                    Text = x.Naziv + "-" + x.Adresa,
+                    Value = x.Id.ToString()
+                }).ToList(),
+
+                Skladiste = ctx.Skladista.Select(x => new SelectListItem
+                {
+                    Text = x.Naziv + "-" + x.Lokacija,
                     Value = x.Id.ToString()
                 }).ToList()
             };
@@ -92,19 +99,23 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
         public ActionResult Procesiraj(NarudzbaProcesirajViewModel obj)
         {
             var narudzba = ctx.Narudzbe
-                .Where(x => x.Id == obj.Id)
+                .Where(x => x.Id == obj.NarudzbaId)
                 .FirstOrDefault();
 
-            narudzba.NarudzbaStatus = NarudzbaStatus.Procesirana;
-
+            decimal iznos = 0;
+            obj.Stavke.ForEach(x => iznos = +x.Kolicina * x.Cijena);
             var ulazNarudzbe = new Ulaz
             {
                 BrojFakture = obj.BrojFakture,
                 DobavljacId = obj.DobavljacId,
-                Iznos = obj.Iznos,
+                Iznos = iznos,
                 SkladisteId = obj.SkladisteId,
+                NarudzbaId = narudzba.Id,
                 DatumKreiranja = DateTime.Now
             };
+
+            ctx.Ulaz.Add(ulazNarudzbe);
+            ctx.SaveChanges();
 
             foreach (var materijali in obj.Stavke)
             {

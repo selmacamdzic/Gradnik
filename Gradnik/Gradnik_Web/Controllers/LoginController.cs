@@ -1,10 +1,8 @@
 ﻿using Gradnik_Data;
 using Gradnik_Data.Models;
 using Gradnik_Web.Helper;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Gradnik_Web.Controllers
@@ -37,8 +35,6 @@ namespace Gradnik_Web.Controllers
 
             if (k == null)
             {
-                // ViewData["PorukaCrvena"] = "Pogrešan username/password";
-
                 ViewBag.PorukaCrvena = "Pogrešan username/password";
                 return View();
             }

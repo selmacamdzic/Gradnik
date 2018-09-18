@@ -5,8 +5,8 @@
         public int Id { get; set; }
         public int MaterijalId { get; set; }
         public int Kolicina { get; set; }
-        public Materijal Materijal { get; set; }
-        public Izlaz Izlaz { get; set; }
+        public virtual Materijal Materijal { get; set; }
+        public virtual Izlaz Izlaz { get; set; }
         public int IzlazId { get; set; }
     }
 }

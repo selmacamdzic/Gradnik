@@ -226,7 +226,6 @@
     <Content Include="Areas\ModulSefGradilista\Views\RaspodjelaPosla\test.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\RaspodjelaPosla\SatiDodaj.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\RaspodjelaPosla\Evidentiraj.cshtml" />
-    <Content Include="Areas\ModulSefGradilista\Views\Faze\Index.cshtml" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -321,6 +320,13 @@
     <Content Include="Areas\ModulDirektor\Views\Projekti\Aktivni.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Gradiliste\Index.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Gradiliste\Index.cshtml" />
+    <Content Include="Areas\ModulReferent\Views\UlazneFakture\Detalji.cshtml" />
+    <Content Include="Areas\ModulSefGradilista\Views\Gradiliste\UtrosakMaterijala.cshtml" />
+    <Content Include="Areas\ModulReferent\Views\IzlazneFakture\Index.cshtml" />
+    <Content Include="Areas\ModulReferent\Views\IzlazneFakture\Detalji.cshtml" />
+    <Content Include="Areas\ModulAdmin\Views\Investitori\Index.cshtml" />
+    <Content Include="Areas\ModulAdmin\Views\Investitori\Dodaj.cshtml" />
+    <Content Include="Areas\ModulAdmin\Views\Investitori\Uredi.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
@@ -328,6 +334,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -352,6 +360,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\ModulAdmin\Controllers\DobavljaciController.cs" />
     <Compile Include="Areas\ModulAdmin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\ModulAdmin\Controllers\InvestitoriController.cs" />
     <Compile Include="Areas\ModulAdmin\Controllers\KorisniciController.cs" />
     <Compile Include="Areas\ModulAdmin\Controllers\MaterijaliController.cs" />
     <Compile Include="Areas\ModulAdmin\Models\DobavljaciDodajVM.cs" />
@@ -375,11 +384,11 @@
     <Compile Include="Areas\ModulEngineering\Models\StatickiProracunAddVM.cs" />
     <Compile Include="Areas\ModulEngineering\Models\TehnickiOpisAddVM.cs" />
     <Compile Include="Areas\ModulEngineering\ModulEngineeringAreaRegistration.cs" />
+    <Compile Include="Areas\ModulReferent\Controllers\IzlazneFaktureController.cs" />
     <Compile Include="Areas\ModulReferent\Controllers\NarudzbaController.cs" />
     <Compile Include="Areas\ModulReferent\Controllers\UlazneFaktureController.cs" />
     <Compile Include="Areas\ModulReferent\Models\UlaznaFakturaDodajVM.cs" />
     <Compile Include="Areas\ModulReferent\ModulReferentAreaRegistration.cs" />
-    <Compile Include="Areas\ModulSefGradilista\Controllers\FazeController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Controllers\GradilisteController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Controllers\IzlazController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Controllers\NarudzbeController.cs" />
@@ -387,6 +396,7 @@
     <Compile Include="Areas\ModulSefGradilista\Controllers\RadniciController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Controllers\RaspodjelaPoslaController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Controllers\TipPoslaController.cs" />
+    <Compile Include="Areas\ModulSefGradilista\Models\AddIzlazVM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\EvidencijaVM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\FazePrikaz2VM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\FazePrikazVM.cs" />
@@ -428,6 +438,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\_SefGradilista.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

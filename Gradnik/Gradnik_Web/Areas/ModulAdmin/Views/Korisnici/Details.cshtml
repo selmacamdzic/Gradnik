@@ -16,15 +16,10 @@
 <div class="modal-body">
     <div class="form-group">
         <dl class="dl-horizontal">
-
             <dt>
                 @Html.DisplayName("Pozicija")
             </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.KorisnikPozicija.Naziv)
-            </dd>
-            <dt>
                 @Html.DisplayName("Aktivan: ")
             </dt>
 
@@ -55,9 +50,6 @@
             <dd>
                 @Html.Display(Model.Ime + " " + Model.Prezime)
             </dd>
-
-
-
             <dt>
                 @Html.DisplayName("Datum rođenja")
             </dt>
@@ -89,11 +81,6 @@
             <dd>
                 @Html.DisplayFor(model => model.KontaktTelefon)
             </dd>
-
-
-
-
-
         </dl>
     </div>
 </div>

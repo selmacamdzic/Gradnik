@@ -1,0 +1,23 @@
+﻿@model Gradnik_Web.Areas.ModulSefGradilista.Models.AddIzlazVM
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("UtrosakMaterijala", "Gradiliste", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label>Odaberi materijal</label>
+        @Html.DropDownListFor(model => model.MaterijalId, Model.Materijal, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Odaberi skladiste</label>
+        @Html.DropDownListFor(model => model.SkladisteId, Model.Skladiste, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Unesi kolicinu</label>
+        @Html.TextBoxFor(model => model.Kolicina, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(model => model.GradilisteId)
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

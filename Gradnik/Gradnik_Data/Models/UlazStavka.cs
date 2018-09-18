@@ -3,8 +3,8 @@
     public class UlazStavka
     {
         public int Id { get; set; }
-        public Materijal Materijal { get; set; }
-        public Ulaz Ulaz { get; set; }
+        public virtual Materijal Materijal { get; set; }
+        public virtual Ulaz Ulaz { get; set; }
         public int MaterijalId { get; set; }
         public int UlazId { get; set; }
         public int Kolicina { get; set; }

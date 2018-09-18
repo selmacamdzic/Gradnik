@@ -69,6 +69,18 @@
     <Compile Include="Migrations\201809160827231_Edit_Gradiliste.Designer.cs">
       <DependentUpon>201809160827231_Edit_Gradiliste.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809172018231_Edit_MaterijalDostupni.cs" />
+    <Compile Include="Migrations\201809172018231_Edit_MaterijalDostupni.Designer.cs">
+      <DependentUpon>201809172018231_Edit_MaterijalDostupni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809172030222_Edit_Izlazi.cs" />
+    <Compile Include="Migrations\201809172030222_Edit_Izlazi.Designer.cs">
+      <DependentUpon>201809172030222_Edit_Izlazi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809172125383_Edit_KorisnikUloge.cs" />
+    <Compile Include="Migrations\201809172125383_Edit_KorisnikUloge.Designer.cs">
+      <DependentUpon>201809172125383_Edit_KorisnikUloge.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Dobavljaci.cs" />
     <Compile Include="Models\Gradiliste.cs" />
@@ -77,7 +89,6 @@
     <Compile Include="Models\IzlazStavke.cs" />
     <Compile Include="Models\Izvjestaji.cs" />
     <Compile Include="Models\Korisnici.cs" />
-    <Compile Include="Models\KorisnikPozicija.cs" />
     <Compile Include="Models\MaterijalDostupni.cs" />
     <Compile Include="Models\Materijal.cs" />
     <Compile Include="Models\NarudbzbaStavka.cs" />
@@ -115,6 +126,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809160827231_Edit_Gradiliste.resx">
       <DependentUpon>201809160827231_Edit_Gradiliste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809172018231_Edit_MaterijalDostupni.resx">
+      <DependentUpon>201809172018231_Edit_MaterijalDostupni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809172030222_Edit_Izlazi.resx">
+      <DependentUpon>201809172030222_Edit_Izlazi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809172125383_Edit_KorisnikUloge.resx">
+      <DependentUpon>201809172125383_Edit_KorisnikUloge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

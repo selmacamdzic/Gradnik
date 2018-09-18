@@ -43,14 +43,24 @@
                 <td>
                     @Html.ActionLink("Dodaj radnika", "Dodaj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, null) |
                     @Html.ActionLink("Evidentiraj radno vrijeme", "Evidentiraj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, null)
-                    @Html.ActionLink("Evidentiraj utrosak materijala", "Evidentiraj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, null)
+                    @Ajax.ActionLink("Dodaj Utroseni Materijal", "UtrosakMaterijala", new { id = item.Id },
+                        new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="ajaxDialog"></div>
+        </div>
+    </div>
+</div>
 <script>
+    function otvoriDialog() {
+        $('#basicModal').modal();
+    }
     $(document).ready(function () {
         $('#gradilistaTable').DataTable();
     });

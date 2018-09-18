@@ -9,7 +9,6 @@ using System.Web.Mvc;
 namespace Gradnik_Web.Areas.ModulDirektor.Controllers
 {
 
-    [Autorizacija(false, true)]
     public class HomeController : Controller
     {
         // GET: Direktor/Home

@@ -23,7 +23,6 @@ namespace Gradnik_Data
         public DbSet<Investitori> Investitori { get; set; }
         public DbSet<Izvjestaji> Izvjestaji { get; set; }
         public DbSet<Korisnici> Korisnici { get; set; }
-        public DbSet<KorisnikPozicija> KorisnikPozicija { get; set; }
         public DbSet<MaterijalDostupni> MaterijalDostupni { get; set; }
         public DbSet<Materijal> Materijali { get; set; }
         public DbSet<Projekti> Projekti { get; set; }
