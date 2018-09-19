@@ -66,7 +66,7 @@ $(document).ready(function () {
         })
             // using the done promise callback
             .done(function (data) {
-                console.log(data);
+                window.location.href = "/ModulSefGradilista/";
             });
         event.preventDefault();
     });

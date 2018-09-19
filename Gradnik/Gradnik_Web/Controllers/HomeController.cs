@@ -31,11 +31,11 @@ namespace Gradnik_Web.Controllers
             }
             if (k.KorisnikUloga == KorisnikUloga.Admin)
             {
-                return RedirectToAction("Prikaz", "Home", new { area = "ModulAdmin" });
+                return RedirectToAction("Index", "Home", new { area = "ModulAdmin" });
             }
             if (k.KorisnikUloga == KorisnikUloga.Direktor)
             {
-                return RedirectToAction("Prikaz", "Home", new { area = "ModulDirektor" });
+                return RedirectToAction("Index", "Home", new { area = "ModulDirektor" });
             }
             if (k.KorisnikUloga == KorisnikUloga.Arhitekta)
             {
@@ -43,9 +43,12 @@ namespace Gradnik_Web.Controllers
             }
             if (k.KorisnikUloga == KorisnikUloga.Referent)
             {
-                return RedirectToAction("Index", "UlazneFakture", new { area = "ModulReferent" });
+                return RedirectToAction("Index", "Home", new { area = "ModulReferent" });
             }
-
+            if (k.KorisnikUloga == KorisnikUloga.SefGradilista)
+            {
+                return RedirectToAction("Index", "Home", new { area = "ModulSefGradilista" });
+            }
             return RedirectToAction("Logout", "Autentifikacija", new { area = "" });
         }
     }

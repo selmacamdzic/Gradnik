@@ -17,7 +17,7 @@ namespace Gradnik_Web.Areas.ModulDirektor
             context.MapRoute(
                 "ModulDirektor_default",
                 "ModulDirektor/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller="Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

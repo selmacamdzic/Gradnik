@@ -87,5 +87,46 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
 
             return View(model);
         }
+
+        public ActionResult Uredi(int id)
+        {
+            var model = new ProjektiAddVM
+            {
+                Korisnik = ctx.Korisnici.Select(x => new SelectListItem
+                {
+                    Text = x.Ime + " " + x.Prezime,
+                    Value = x.Id.ToString()
+                }).ToList(),
+
+                Investitor = ctx.Investitori.Select(x => new SelectListItem
+                {
+                    Text = x.Naziv + "-" + x.ImeOdgovorneOsobe,
+                    Value = x.Id.ToString()
+                }).ToList(),
+                Projekat = ctx.Projekti.FirstOrDefault(x=>x.Id == id)
+            };
+            return View(model);
+        }
+        
+        [HttpPost]
+        public ActionResult Uredi(ProjektiAddVM vm)
+        {
+            if (!ModelState.IsValid )
+            {
+                return View("Uredi", vm);
+            }
+
+            var projekat = ctx.Projekti.Find(vm.Projekat.Id);
+
+            projekat.DatumUgovora = vm.Projekat.DatumUgovora;
+            projekat.InvestitorId = vm.Projekat.InvestitorId;
+            projekat.KorisnikId = vm.Projekat.KorisnikId;
+            projekat.KrajProjekta = vm.Projekat.KrajProjekta;
+            projekat.Lokacija = vm.Projekat.Lokacija;
+            projekat.Naziv = vm.Projekat.Naziv;
+            projekat.PocetakProjekta = vm.Projekat.PocetakProjekta;
+
+            return RedirectToAction("Aktivni");
+        }
     }
 }

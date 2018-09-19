@@ -48,7 +48,7 @@ namespace Gradnik_Web.Controllers
         public ActionResult Logout()
         {
             Autentifikacija.PokreniNovuSesiju(null, HttpContext, true);
-            return RedirectToAction("Index", "Autentifikacija");
+            return RedirectToAction("Index");
         }
     }
 }

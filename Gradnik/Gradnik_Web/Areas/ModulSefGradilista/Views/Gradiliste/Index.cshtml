@@ -3,22 +3,22 @@
 <table class="table" id="gradilistaTable">
     <thead>
         <tr>
-            <th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
                 @Html.DisplayName("Naziv projekta")
             </th>
-            <th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
                 @Html.DisplayNameFor(model => model.Grad)
             </th>
-            <th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
                 @Html.DisplayNameFor(model => model.Opstina)
             </th>
-            <th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
                 @Html.DisplayNameFor(model => model.PostanskiBroj)
             </th>
-            <th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
                 @Html.DisplayNameFor(model => model.Adresa)
             </th>
-            <th></th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
         </tr>
     </thead>
     <tbody>
@@ -41,14 +41,34 @@
                     @Html.DisplayFor(modelItem => item.Adresa)
                 </td>
                 <td>
-                    @Html.ActionLink("Dodaj radnika", "Dodaj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, null) |
-                    @Html.ActionLink("Evidentiraj radno vrijeme", "Evidentiraj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, null)
+                    @Html.ActionLink("Dodaj radnika", "Dodaj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, new { @class = "btn btn-success btn-sm entypo-info" }) |
+                    @Html.ActionLink("Evidentiraj radno vrijeme", "Evidentiraj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, new { @class = "btn btn-success btn-sm entypo-info" }) |
                     @Ajax.ActionLink("Dodaj Utroseni Materijal", "UtrosakMaterijala", new { id = item.Id },
-                        new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
+                  new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
                 </td>
             </tr>
         }
     </tbody>
+    <tfoot>
+        <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayName("Naziv projekta")
+            </th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayNameFor(model => model.Grad)
+            </th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayNameFor(model => model.Opstina)
+            </th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayNameFor(model => model.PostanskiBroj)
+            </th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayNameFor(model => model.Adresa)
+            </th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
+        </tr>
+    </tfoot>
 </table>
 <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog">

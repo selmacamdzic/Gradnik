@@ -23,7 +23,7 @@
                     @Html.DisplayFor(modelItem => item.Datum)
                 </td>
                 <td>
-                    @Html.ActionLink("Detalji", "Detalji", new { id = item.Id })
+                    @Html.ActionLink("Detalji", "Detalji", new { id = item.Id },new { @class="btn btn-success" })
                 </td>
             </tr>
         }

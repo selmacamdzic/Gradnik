@@ -1,11 +1,7 @@
 ﻿using Gradnik_Data;
 using Gradnik_Data.Models;
 using Gradnik_Web.Areas.ModulDirektor.Models;
-using Gradnik_Web.Helper;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulDirektor.Controllers
@@ -34,6 +30,39 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
         {
          var model = new RadniciAddVM();
             return View(model);
+        }
+
+        public ActionResult Spremi(RadniciAddVM vm)
+        {
+            //TODO provjeriti sta sa validacijom kada je poziv iz uredi
+            if (!ModelState.IsValid)
+            {
+                return View("Dodaj", vm);
+            }
+
+            Radnici i;
+            if (vm.Id == 0)
+            {
+                i = new Radnici();
+                ctx.Radnici.Add(i);
+            }
+            else
+            {
+                i = ctx.Radnici.Find(vm.Id);
+            }
+
+            i.DatumRodjenja = vm.DatumRodjenja;
+            i.Email = vm.Email;
+            i.KontaktTelefon = vm.KontaktTelefon;
+            i.Grad = vm.Grad;
+            i.Ime = vm.Ime;
+            i.Prezime = vm.Prezime;
+            i.Spol = vm.Spol;
+            i.Zvanje = vm.Zvanje;
+
+            ctx.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         public ActionResult Save(RadniciAddVM vm)
@@ -84,7 +113,7 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
             
             ctx.SaveChanges();
 
-            return RedirectToAction("Edit");
+            return RedirectToAction("Index");
         }
 
         public ActionResult ActiveWorkInfo(int id)
@@ -107,25 +136,5 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
             return View(model);
         }
 
-        public ActionResult InactiveWorkInfo(int id)
-        {
-            var model = new InActiveWorkInfo
-            {
-
-                //dodati uslov u raspodjeli posla da je kraj unesen
-
-                inactiveWorkInfos = ctx.RaspodjelaPosla.Where(x => x.RadnikId==id).Select(x => new WorkInfoRow
-                {
-                    RaspodjelaPoslaId = x.Id,
-                    workareaName = x.Gradiliste.Adresa,
-                    jobtitle = x.TipPosla.Naziv,
-                    startDate = x.PocetakRada,
-                    hours = ctx.Sati.Where(y => y.RaspodjelaPoslaId == x.Id).Sum(y => y.OdradjeniSati)
-
-                }).ToList()
-            };
-
-            return View(model);
-        }
     }
 }

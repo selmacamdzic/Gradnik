@@ -3,16 +3,16 @@
 <table class="table" id="aktivniProjekti">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PocetakProjekta)
+            <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayName("Pocetak Projekta")
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KrajProjekta)
+            <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayName("Kraj Projekta")
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Investitor.Naziv)
+            <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayName("Investitor")
             </th>
-            <th></th>
+            <th style="background-color:rgb(48, 54, 65); color:white;"></th>
         </tr>
     </thead>
     <tbody>
@@ -30,7 +30,7 @@
                 </td>
                 <td>
                     @Html.ActionLink("Detalji", "Detalji", new { id = item.Id }) |
-                    @Html.ActionLink("Gradilista", "Index", "Gradiliste", new { id = item.Id }, null)
+                    @Html.ActionLink("Uredi", "Uredi", new { id = item.Id })
                 </td>
             </tr>
         }

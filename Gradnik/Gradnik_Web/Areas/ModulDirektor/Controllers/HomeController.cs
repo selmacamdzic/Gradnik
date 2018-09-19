@@ -14,12 +14,13 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
         // GET: Direktor/Home
 
         MojContext ctx = new MojContext();
-        public ActionResult Prikaz()
-        {
-            var model = ctx.Dobavljaci.ToList();
-            return View(model);
-        }
+    
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Prikaz()
         {
             return View();
         }

@@ -22,9 +22,8 @@ namespace Gradnik_Web.Areas.ModulDirektor.Models
         [Required]
         public string KontaktTelefon { get; set; }
         public string Email { get; set; }
-
-        //TODO
-        //dodat ListItem za spol
+        public string Zvanje { get; set; }
+        public string Grad { get; set; }
 
     }
 }

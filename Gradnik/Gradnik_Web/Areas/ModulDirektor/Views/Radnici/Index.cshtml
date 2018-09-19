@@ -1,12 +1,5 @@
 ﻿@model IEnumerable<Gradnik_Data.Models.Radnici>
 @using Gradnik_Data.Models
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-
-}
-
-
 <table class="table table-hover table-bordered" id="table-1">
     <thead>
         <tr>
@@ -15,110 +8,62 @@
             <th style="background-color:rgb(48, 54, 65); color:white;">JMBG</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Kontakt telefon</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Email</th>
-          
-
-
-
-
+            <th style="background-color:rgb(48, 54, 65); color:white;">Grad</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (Radnici item in Model)
+        @foreach (var item in Model)
         {
-            <tr class="odd gradeX"  onclick="location.href = '@(Url.Action("Profile", "Radnici", new { id = item.Id }))'">
-                    @if (item.ImeRoditelja != null)
-                    {
-                        <td>@item.Ime (@item.ImeRoditelja) @item.Prezime</td>
-                    }
-                    else
-                    {
-                        <td>@item.Ime  @item.Prezime</td>
-                    }
-               
+            <tr class="odd gradeX">
+                <td>@item.Ime (@item.ImeRoditelja) @item.Prezime</td>
                 <td>@item.DatumRodjenja.ToString("dd.MM.yyyy")</td>
                 <td>@item.JMBG</td>
                 <td>@item.KontaktTelefon</td>
                 <td>@item.Email</td>
+                <td>@item.Grad</td>
+                <td>
+                    @Ajax.ActionLink("Uredi", "Edit", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
+                </td>
+            </tr>
 
-                </tr>
+        }
 
-                }
-        
-
-
-
-
-</tbody>
+    </tbody>
     <tfoot>
-        <tr>            
-            <th>Ime i Prezime</th>
-            <th>Datum rođenja</th>
-            <th>JMBG</th>
-            <th>Kontakt telefon</th>
-            <th>Email</th>
+        <tr>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Ime i Prezime</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Datum rođenja</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">JMBG</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Kontakt telefon</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Email</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Grad</th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
         </tr>
     </tfoot>
 </table>
 
 <div>
 
-    @Html.ActionLink("Novi unos", "Add", null, new { @class = "btn btn-blue" })
-    @*<button type="button" class="btn btn-default btn-icon icon-left">
-            <i class="entypo-user-add"></i>
-        </button>*@
+    @Html.ActionLink("Dodaj novog radnika", "Add", null, new { @class = "btn btn-success" })
+
 </div>
 
 
-
-
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="ajaxDialog"></div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript">
     function otvoriDialog() {
         $('#basicModal').modal();
     }
-</script>
 
-
-
-<script type="text/javascript">
-    var responsiveHelper;
-    var breakpointDefinition = {
-        tablet: 1024,
-        phone: 480
-    };
-    var tableContainer;
-
-    jQuery(document).ready(function ($) {
-
-        tableContainer = $("#table-1");
-
-        tableContainer.dataTable({
-            "sPaginationType": "bootstrap",
-            "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-            "bStateSave": true,
-
-
-            // Responsive Settings
-            bAutoWidth: false,
-            fnPreDrawCallback: function () {
-                // Initialize the responsive datatables helper once.
-                if (!responsiveHelper) {
-
-                    responsiveHelper = new ResponsiveDatatablesHelper(tableContainer, breakpointDefinition);
-                }
-            },
-            fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-                responsiveHelper.createExpandIcon(nRow);
-            },
-            fnDrawCallback: function (oSettings) {
-                responsiveHelper.respond();
-            }
-        });
-
-
-        $(".dataTables_wrapper select").select2({
-            minimumResultsForSearch: -1
-        });
+    $(document).ready(function () {
+        $('#investitoriTabela').DataTable();
     });
 </script>
-

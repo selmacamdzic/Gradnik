@@ -13,7 +13,7 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/nav.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <script src="~/Scripts/jquery-2.2.4.min.js"></script>
     <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
@@ -29,7 +29,9 @@
 </head>
 <body>
     <div class="nav-side-menu">
-        <div class="brand">Brand Logo</div>
+        <div class="brand">
+            <img src="~/Img/G_LOGO.png" width="100" alt="" />
+        </div>
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
         <div class="menu-list">
@@ -48,6 +50,17 @@
                     @Html.Partial("_SefGradilista")
 
                 }
+                else if (korisnik.KorisnikUloga == Gradnik_Data.Models.KorisnikUloga.Referent)
+                {
+                    @Html.Partial("_Referent")
+
+                }
+                <li>
+                    <a href="/Login/Logout">
+                        <i class="fas fa-power-off"></i>
+                        Odjavi se
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -71,5 +84,9 @@
     html,
     body {
         height: 100%;
+    }
+
+    .brand {
+        padding-bottom: 10px
     }
 </style>

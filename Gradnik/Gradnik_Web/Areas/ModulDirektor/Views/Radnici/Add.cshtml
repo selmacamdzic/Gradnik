@@ -1,18 +1,6 @@
 ﻿@model Gradnik_Web.Areas.ModulDirektor.Models.RadniciAddVM
 
-@{
-    Layout = null;
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Novi unos</title>
-</head>
-<body>
     @using (Html.BeginForm("Save","Radnici")) 
     {
         @Html.AntiForgeryToken()
@@ -92,7 +80,3 @@
             </div>
         </div>
     }
-    
-
-</body>
-</html>
