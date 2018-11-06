@@ -37,6 +37,7 @@ namespace Gradnik_Data
         public DbSet<Narudzba> Narudzbe { get; set; }
         public DbSet<NarudbzbaStavka> NarudbzbaStavka { get; set; }
         public DbSet<Skladiste> Skladista { get; set; }
+        public DbSet<Dokumentacija> Dokumentacija { get; set; }
 
     }
 }

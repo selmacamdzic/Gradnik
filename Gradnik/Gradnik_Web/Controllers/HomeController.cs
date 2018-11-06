@@ -39,7 +39,7 @@ namespace Gradnik_Web.Controllers
             }
             if (k.KorisnikUloga == KorisnikUloga.Arhitekta)
             {
-                return RedirectToAction("Index", "Projekti", new { area = "ModulEngineering" });
+                return RedirectToAction("Index", "Home", new { area = "ModulEngineering" });
             }
             if (k.KorisnikUloga == KorisnikUloga.Referent)
             {

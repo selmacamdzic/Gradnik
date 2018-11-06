@@ -55,6 +55,11 @@
                     @Html.Partial("_Referent")
 
                 }
+                else if (korisnik.KorisnikUloga == Gradnik_Data.Models.KorisnikUloga.Arhitekta)
+                {
+                    @Html.Partial("_Arhitekta")
+
+                }
                 <li>
                     <a href="/Login/Logout">
                         <i class="fas fa-power-off"></i>

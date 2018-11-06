@@ -17,7 +17,7 @@ namespace Gradnik_Web.Areas.ModulEngineering
             context.MapRoute(
                 "ModulEngineering_default",
                 "ModulEngineering/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

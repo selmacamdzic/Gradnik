@@ -43,8 +43,9 @@
                 <td>
                     @Html.ActionLink("Dodaj radnika", "Dodaj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, new { @class = "btn btn-success btn-sm entypo-info" }) |
                     @Html.ActionLink("Evidentiraj radno vrijeme", "Evidentiraj", "RaspodjelaPosla", new { gradilisteId = item.Id, area = "ModulSefGradilista" }, new { @class = "btn btn-success btn-sm entypo-info" }) |
+                    @Html.ActionLink("Evidencija Izvjestaja", "ListaIzvjestaja", new { id = item.Id }, new { @class = "btn btn-success btn-sm entypo-info" }) |
                     @Ajax.ActionLink("Dodaj Utroseni Materijal", "UtrosakMaterijala", new { id = item.Id },
-                  new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
+            new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
                 </td>
             </tr>
         }

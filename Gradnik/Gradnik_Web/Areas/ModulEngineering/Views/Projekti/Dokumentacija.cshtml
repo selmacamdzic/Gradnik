@@ -1,0 +1,24 @@
+﻿@model Gradnik_Web.Areas.ModulEngineering.Models.ProjektnaDokumentacijaAddVM
+
+<div class="row">
+
+    @using (Html.BeginForm("DodajDokumentaciju", "Projekti", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+            </div>
+            <div class="custom-file">
+                @Html.TextBoxFor(x => x.File, new { type = "file" })
+                <label class="custom-file-label" for="inputGroupFile01">Odaberite datoteku</label>
+            </div>
+        </div>
+        @Html.TextBoxFor(x => x.Opis)
+        @Html.HiddenFor(x => x.ProjekatId)
+        <button type="submit">Spremi</button>
+    }
+
+    <div id="listaFajlova">
+        @Html.Action("_ListaDokumenata", new { id = Model.ProjekatId })
+    </div>
+</div>

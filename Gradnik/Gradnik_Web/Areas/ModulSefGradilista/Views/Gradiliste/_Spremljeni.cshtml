@@ -1,0 +1,25 @@
+﻿@model  IEnumerable<Gradnik_Data.Models.Izvjestaji>
+@{
+    Layout = null;
+}
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Izvjestaji</h3>
+    </div>
+</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col-sm-10">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong><span class="text-muted">@item.Datum.ToString()</span></strong>
+            </div>
+            <div class="panel-body">
+                @item.Izvjestaj
+            </div>
+        </div>
+        @Ajax.ActionLink("Obrisi", "ObrisiIzvjestaj", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "updateIzvjestaj", HttpMethod="Post" }, new { @class = "btn btn-default" })
+    </div>
+    }
+</div>

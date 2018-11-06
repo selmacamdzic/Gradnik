@@ -81,8 +81,17 @@
     <Compile Include="Migrations\201809172125383_Edit_KorisnikUloge.Designer.cs">
       <DependentUpon>201809172125383_Edit_KorisnikUloge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811031745277_Add_Dokumentacija.cs" />
+    <Compile Include="Migrations\201811031745277_Add_Dokumentacija.Designer.cs">
+      <DependentUpon>201811031745277_Add_Dokumentacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811032020513_Edit_Dokumentacija_Opis.cs" />
+    <Compile Include="Migrations\201811032020513_Edit_Dokumentacija_Opis.Designer.cs">
+      <DependentUpon>201811032020513_Edit_Dokumentacija_Opis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Dobavljaci.cs" />
+    <Compile Include="Models\Dokumentacija.cs" />
     <Compile Include="Models\Gradiliste.cs" />
     <Compile Include="Models\Investitori.cs" />
     <Compile Include="Models\Izlaz.cs" />
@@ -135,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809172125383_Edit_KorisnikUloge.resx">
       <DependentUpon>201809172125383_Edit_KorisnikUloge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811031745277_Add_Dokumentacija.resx">
+      <DependentUpon>201811031745277_Add_Dokumentacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811032020513_Edit_Dokumentacija_Opis.resx">
+      <DependentUpon>201811032020513_Edit_Dokumentacija_Opis.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

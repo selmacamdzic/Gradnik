@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Gradnik_Data.Models.Dokumentacija>
+
+@{
+    Layout = null;
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            @foreach (var item in Model)
+            {
+
+                <div class="card">
+                    <img class="card-img-top" src="http://placehold.it/250x150" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title.</h4>
+                        <p class="card-text">@item.Opis</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                        @Html.ActionLink("Download", "DownLoadFile", new { id = item.Id })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

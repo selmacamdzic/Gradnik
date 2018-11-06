@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Gradnik_Api.Models;
+using Gradnik_Data;
+using Gradnik_Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Gradnik_Api.Controllers
@@ -12,30 +13,73 @@ namespace Gradnik_Api.Controllers
         MojContext ctx = new MojContext();
 
         [HttpGet]
-        [Route("api/Projekti/Aktivni/{id}")]
-        [ResponseType(typeof(List<Projekti>))]
-        public List<Projekti> Aktivni(int id)
+        public IHttpActionResult Get()
         {
-
-            List<Projekti> projekti = ctx.Projekti
-                .Where(x => x.Status == ProjektStatus.Aktivan)
-                .ToList();
-
-            return Ok(projekti);
-
+            var projektis = ctx.Projekti.ToList();
+            return Ok(projektis);
         }
 
-
         [HttpGet]
-        [ResponseType(typeof(List<Projekti>))]
-        public List<Projekti> Index()
+        public IHttpActionResult GetAktivniRadnici(int tipPoslaId, int projekatId)
         {
 
-            List<Projekti> projekti = ctx.Projekti
-                .ToList();
+            var radnici = ctx.RaspodjelaPosla
+                    .Where(r => r.Gradiliste.ProjektiId == projekatId && r.TipPoslaId == tipPoslaId)
+                    .Select(x => new
+                    {
+                        Id = x.Radnik.Id,
+                        Ime = x.Radnik.Ime,
+                        Prezime = x.Radnik.Prezime,
+                        Zvanje = x.Radnik.Zvanje,
+                        JMBG = x.Radnik.JMBG,
+                        DatumRodjenja = x.Radnik.DatumRodjenja,
+                        Email = x.Radnik.Email,
+                        KontaktTelefon = x.Radnik.KontaktTelefon
+                    }).ToList();
 
-            return Ok(projekti);
+            return Ok(radnici);
+        }
 
+        [HttpGet]
+        public IHttpActionResult GetTipPoslaByProjekatId(int projekatId)
+        {
+
+            var tipposla = ctx.RaspodjelaPosla
+                    .Where(r => r.Gradiliste.ProjektiId == projekatId )
+                    .Select(x => new
+                    {
+                        TipPostId = x.TipPosla.Id,
+                        TipPoslaNaziv = x.TipPosla.Naziv,
+                        count = ctx.RaspodjelaPosla.Where(d => d.Gradiliste.ProjektiId == projekatId).Count()
+                    }).ToList();
+
+            return Ok(tipposla);
+        }
+
+        [HttpPost]
+        public IHttpActionResult AddRadnik(AddRadnikVM obj)
+        {
+            List<Radnici> radnici = new List<Radnici>();
+
+            var raspodjelaPosla = ctx.RaspodjelaPosla.FirstOrDefault(d => d.TipPoslaId == obj.JobTypeId);
+
+            foreach (var item in obj.SelectedEmployees)
+            {
+                ctx.RaspodjelaPosla.Add(
+                    new RaspodjelaPosla
+                    {
+                        RadnikId = item,
+                        GradilisteId = raspodjelaPosla.GradilisteId,
+                        PocetakRada = DateTime.UtcNow,
+                        KrajRada = DateTime.UtcNow.AddMonths(1),
+                        TipPoslaId = obj.JobTypeId,
+                        KorisnikId = 1
+                    });
+            }
+
+            ctx.SaveChanges();
+
+            return Ok();
         }
 
     }

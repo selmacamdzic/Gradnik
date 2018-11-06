@@ -190,19 +190,12 @@
     <Content Include="Areas\ModulDirektor\Views\Radnici\Profile.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Radnici\Edit.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Radnici\ActiveWorkInfo.cshtml" />
-    <Content Include="Areas\ModulDirektor\Views\Radnici\InactiveWorkInfo.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Projekti\Dodaj.cshtml" />
     <Content Include="Areas\ModulEngineering\Views\web.config" />
     <Content Include="Areas\ModulEngineering\Views\Projekti\Index.cshtml" />
     <Content Include="Areas\ModulEngineering\Views\Shared\_ViewStart.cshtml" />
     <Content Include="Areas\ModulEngineering\Views\_ViewStart.cshtml" />
     <Content Include="Areas\ModulEngineering\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\ModulEngineering\Views\ProjektnaDokumentacija\Add.cshtml" />
-    <Content Include="Areas\ModulEngineering\Views\TehnickiOpis\Add.cshtml" />
-    <Content Include="Areas\ModulEngineering\Views\StatickiProracun\Add.cshtml" />
-    <Content Include="Areas\ModulEngineering\Views\StatickiProracun\Save.cshtml" />
-    <Content Include="Areas\ModulEngineering\Views\Projekti\Pregled.cshtml" />
-    <Content Include="Areas\ModulEngineering\Views\Projekti\Realizovani.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Projekti\Pregled.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Projekti\Index.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Projekti\Realizovani.cshtml" />
@@ -330,6 +323,12 @@
     <Content Include="Areas\ModulReferent\Views\Home\Index.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Home\Index.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Home\Prikaz.cshtml" />
+    <Content Include="Areas\ModulSefGradilista\Views\Gradiliste\Evidencija.cshtml" />
+    <Content Include="Areas\ModulSefGradilista\Views\Gradiliste\ListaIzvjestaja.cshtml" />
+    <Content Include="Areas\ModulSefGradilista\Views\Gradiliste\_Spremljeni.cshtml" />
+    <Content Include="Areas\ModulEngineering\Views\Home\Index.cshtml" />
+    <Content Include="Areas\ModulEngineering\Views\Projekti\Dokumentacija.cshtml" />
+    <Content Include="Areas\ModulEngineering\Views\Projekti\_ListaDokumenata.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
@@ -380,12 +379,9 @@
     <Compile Include="Areas\ModulDirektor\Models\RadniciVM.cs" />
     <Compile Include="Areas\ModulDirektor\Models\WorkInfoVM.cs" />
     <Compile Include="Areas\ModulDirektor\ModulDirektorAreaRegistration.cs" />
+    <Compile Include="Areas\ModulEngineering\Controllers\HomeController.cs" />
     <Compile Include="Areas\ModulEngineering\Controllers\ProjektiController.cs" />
-    <Compile Include="Areas\ModulEngineering\Controllers\ProjektnaDokumentacijaController.cs" />
-    <Compile Include="Areas\ModulEngineering\Controllers\TehnickiOpisController.cs" />
     <Compile Include="Areas\ModulEngineering\Models\ProjektnaDokumentacijaAddVM.cs" />
-    <Compile Include="Areas\ModulEngineering\Models\StatickiProracunAddVM.cs" />
-    <Compile Include="Areas\ModulEngineering\Models\TehnickiOpisAddVM.cs" />
     <Compile Include="Areas\ModulEngineering\ModulEngineeringAreaRegistration.cs" />
     <Compile Include="Areas\ModulReferent\Controllers\HomeController.cs" />
     <Compile Include="Areas\ModulReferent\Controllers\IzlazneFaktureController.cs" />
@@ -402,6 +398,7 @@
     <Compile Include="Areas\ModulSefGradilista\Controllers\RaspodjelaPoslaController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Controllers\TipPoslaController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\AddIzlazVM.cs" />
+    <Compile Include="Areas\ModulSefGradilista\Models\EvidencijaGradilistaVM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\EvidencijaVM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\FazePrikaz2VM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\FazePrikazVM.cs" />
@@ -444,6 +441,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_SefGradilista.cshtml" />
+    <Content Include="Views\Shared\_Arhitekta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
