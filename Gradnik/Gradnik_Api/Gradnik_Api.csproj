@@ -183,23 +183,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\IzvjestajController.cs" />
-    <Compile Include="Controllers\KorisniciController.cs" />
     <Compile Include="Controllers\ProjektiController.cs" />
     <Compile Include="Controllers\RadniciController.cs" />
-    <Compile Include="Controllers\RaspodjelaPoslaController.cs" />
-    <Compile Include="Controllers\TipPoslaController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\IzvjestajVM.cs" />
-    <Compile Include="Models\PrikazRadnikaVM.cs" />
-    <Compile Include="Models\RadniciEvidencijaVM.cs" />
-    <Compile Include="Models\RadnikVM.cs" />
-    <Compile Include="Models\RaspodjelaPoslaDodajVM.cs" />
-    <Compile Include="Models\SatiController.cs" />
-    <Compile Include="Models\TipPoslaVM.cs" />
+    <Compile Include="Models\AddRadnikVM.cs" />
+    <Compile Include="Models\UserLoginVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

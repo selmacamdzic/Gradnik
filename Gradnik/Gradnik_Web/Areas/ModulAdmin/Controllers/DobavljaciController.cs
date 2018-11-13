@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulAdmin.Controllers
 {
+    [Autorizacija(KorisnikUloga.Admin)]
     public class DobavljaciController : Controller
     {
         MojContext ctx = new MojContext();

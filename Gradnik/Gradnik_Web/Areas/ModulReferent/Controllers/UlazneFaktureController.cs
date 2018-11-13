@@ -1,9 +1,12 @@
 ﻿using Gradnik_Data;
+using Gradnik_Data.Models;
+using Gradnik_Web.Helper;
 using System.Linq;
 using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulReferent.Controllers
 {
+    [Autorizacija(KorisnikUloga.Referent)]
     public class UlazneFaktureController : Controller
     {
         MojContext ctx = new MojContext();

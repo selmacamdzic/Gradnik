@@ -19,7 +19,7 @@
                 @item.Izvjestaj
             </div>
         </div>
-        @Ajax.ActionLink("Obrisi", "ObrisiIzvjestaj", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "updateIzvjestaj", HttpMethod="Post" }, new { @class = "btn btn-default" })
+        @Ajax.ActionLink("Obrisi", "ObrisiIzvjestaj", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "updateIzvjestaj", HttpMethod="Post" }, new { @class = "btn btn-danger" })
     </div>
     }
 </div>

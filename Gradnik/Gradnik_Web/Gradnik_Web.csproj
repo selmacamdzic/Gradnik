@@ -100,6 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\signing-the-contract.png" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -108,6 +109,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\form.css" />
+    <Compile Include="Models\BrojRadnikaPoProjektimaDto.cs" />
+    <Compile Include="Models\BrojRadnikaTipPoslaDto.cs" />
+    <Compile Include="Models\PotrosnjaMaterijalaDto.cs" />
     <Content Include="Scripts\feature\multiStepProjekat.js" />
     <Content Include="Scripts\feature\narudzbe.js" />
     <Content Include="Content\nav.css" />
@@ -189,7 +193,6 @@
     <Content Include="Areas\ModulDirektor\Views\Radnici\Add.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Radnici\Profile.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Radnici\Edit.cshtml" />
-    <Content Include="Areas\ModulDirektor\Views\Radnici\ActiveWorkInfo.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Projekti\Dodaj.cshtml" />
     <Content Include="Areas\ModulEngineering\Views\web.config" />
     <Content Include="Areas\ModulEngineering\Views\Projekti\Index.cshtml" />
@@ -205,8 +208,6 @@
     <Content Include="Areas\ModulReferent\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\ModulReferent\Views\UlazneFakture\Dodaj.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\web.config" />
-    <Content Include="Areas\ModulSefGradilista\Views\Radnici\Index.cshtml" />
-    <Content Include="Areas\ModulSefGradilista\Views\Radnici\Profile.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Projekti\Index.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Projekti\Pregled.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Projekti\Realizovani.cshtml" />
@@ -305,8 +306,8 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\ModulSefGradilista\Views\Narudzbe\Index.cshtml" />
-    <Content Include="Areas\ModulSefGradilista\Views\Narudzbe\AktivneNarudzbe.cshtml" />
-    <Content Include="Areas\ModulSefGradilista\Views\Narudzbe\Detalji.cshtml" />
+    <Content Include="Areas\ModulReferent\Views\Narudzba\AktivneNarudzbe.cshtml" />
+    <Content Include="Areas\ModulReferent\Views\Narudzba\Detalji.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Narudzbe\Procesirane.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Projekti\Aktivni.cshtml" />
     <Content Include="Areas\ModulDirektor\Views\Gradiliste\Index.cshtml" />
@@ -322,13 +323,19 @@
     <Content Include="Areas\ModulDirektor\Views\Home\Index.cshtml" />
     <Content Include="Areas\ModulReferent\Views\Home\Index.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Home\Index.cshtml" />
-    <Content Include="Areas\ModulDirektor\Views\Home\Prikaz.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Gradiliste\Evidencija.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Gradiliste\ListaIzvjestaja.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Gradiliste\_Spremljeni.cshtml" />
     <Content Include="Areas\ModulEngineering\Views\Home\Index.cshtml" />
     <Content Include="Areas\ModulEngineering\Views\Projekti\Dokumentacija.cshtml" />
     <Content Include="Areas\ModulEngineering\Views\Projekti\_ListaDokumenata.cshtml" />
+    <Content Include="Areas\ModulSefGradilista\Views\Projekti\PregledRadnika.cshtml" />
+    <Content Include="Areas\ModulDirektor\Views\Radnici\Detalji.cshtml" />
+    <Content Include="Areas\ModulDirektor\Views\Radnici\View.cshtml" />
+    <Content Include="Areas\ModulDirektor\Views\Projekti\Detalji.cshtml" />
+    <Content Include="Areas\ModulDirektor\Views\Projekti\_ListaDokumenata.cshtml" />
+    <Content Include="Areas\ModulSefGradilista\Views\Gradiliste\Greska.cshtml" />
+    <Content Include="Areas\ModulSefGradilista\Views\Skladiste\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
@@ -373,11 +380,11 @@
     <Compile Include="Areas\ModulDirektor\Controllers\HomeController.cs" />
     <Compile Include="Areas\ModulDirektor\Controllers\ProjektiController.cs" />
     <Compile Include="Areas\ModulDirektor\Controllers\RadniciController.cs" />
-    <Compile Include="Areas\ModulDirektor\Models\InActiveWorkInfo.cs" />
+    <Compile Include="Areas\ModulDirektor\Models\ProjekatDetaljiVM.cs" />
     <Compile Include="Areas\ModulDirektor\Models\ProjektiAddVM.cs" />
     <Compile Include="Areas\ModulDirektor\Models\RadniciAddVM.cs" />
+    <Compile Include="Areas\ModulDirektor\Models\RadniciDetaljiVM.cs" />
     <Compile Include="Areas\ModulDirektor\Models\RadniciVM.cs" />
-    <Compile Include="Areas\ModulDirektor\Models\WorkInfoVM.cs" />
     <Compile Include="Areas\ModulDirektor\ModulDirektorAreaRegistration.cs" />
     <Compile Include="Areas\ModulEngineering\Controllers\HomeController.cs" />
     <Compile Include="Areas\ModulEngineering\Controllers\ProjektiController.cs" />
@@ -386,6 +393,7 @@
     <Compile Include="Areas\ModulReferent\Controllers\HomeController.cs" />
     <Compile Include="Areas\ModulReferent\Controllers\IzlazneFaktureController.cs" />
     <Compile Include="Areas\ModulReferent\Controllers\NarudzbaController.cs" />
+    <Compile Include="Areas\ModulReferent\Controllers\SkladisteController.cs" />
     <Compile Include="Areas\ModulReferent\Controllers\UlazneFaktureController.cs" />
     <Compile Include="Areas\ModulReferent\Models\UlaznaFakturaDodajVM.cs" />
     <Compile Include="Areas\ModulReferent\ModulReferentAreaRegistration.cs" />
@@ -394,19 +402,18 @@
     <Compile Include="Areas\ModulSefGradilista\Controllers\IzlazController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Controllers\NarudzbeController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Controllers\ProjektiController.cs" />
-    <Compile Include="Areas\ModulSefGradilista\Controllers\RadniciController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Controllers\RaspodjelaPoslaController.cs" />
+    <Compile Include="Areas\ModulSefGradilista\Controllers\SkladisteController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Controllers\TipPoslaController.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\AddIzlazVM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\EvidencijaGradilistaVM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\EvidencijaVM.cs" />
-    <Compile Include="Areas\ModulSefGradilista\Models\FazePrikaz2VM.cs" />
-    <Compile Include="Areas\ModulSefGradilista\Models\FazePrikazVM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\NarudbaAddViewModel.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\NarudbaListViewModel.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\NarudzbaDetaljiViewModel.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\NarudzbaProcesirajViewModel.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\PrikazRadnikaVM.cs" />
+    <Compile Include="Areas\ModulSefGradilista\Models\RapsodjelaRadnikaPrikazVM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\RaspodjelaPoslaDodajVM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\RaspodjelaPoslaIndexVM.cs" />
     <Compile Include="Areas\ModulSefGradilista\Models\TipPoslaVM.cs" />
@@ -418,6 +425,10 @@
     </Compile>
     <Compile Include="Helper\Autentifikacija.cs" />
     <Compile Include="Helper\Autorizacija.cs" />
+    <Compile Include="Models\ProsjecnaCijenaMaterijalaDto.cs" />
+    <Compile Include="Models\ProsjecnaPotrosnjaMaterijalaDto.cs" />
+    <Compile Include="Models\StanjeSkladistaDto.cs" />
+    <Compile Include="Models\TopKoristeniMaterijaliDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -451,9 +462,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\ModulReferent\Views\Narudzba\" />
+    <Folder Include="Areas\ModulReferent\Views\Skladiste\" />
     <Folder Include="Areas\ModulSefGradilista\Views\Izlaz\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gradnik_Data\Gradnik_Data.csproj">

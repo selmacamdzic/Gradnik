@@ -2,14 +2,16 @@
 using Gradnik_Data.Models;
 using Gradnik_Web.Areas.ModulSefGradilista.Models;
 using Gradnik_Web.Helper;
+using Gradnik_Web.Models;
 using System;
-using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
 {
+    [Autorizacija(KorisnikUloga.SefGradilista)]
     public class GradilisteController : Controller
     {
         // GET: ModulSefGradilista/Gradiliste
@@ -52,6 +54,22 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
         [HttpPost]
         public ActionResult UtrosakMaterijala(AddIzlazVM obj)
         {
+            var SqlParameters = new[] 
+            {
+               new SqlParameter("Id", SqlDbType.Int) { Value = obj.MaterijalId },
+               new SqlParameter("SkladisteId", SqlDbType.Int) { Value = obj.SkladisteId }
+            };
+
+            var query = ctx.Database
+                                        .SqlQuery<StanjeSkladistaDto>("SELECT * FROM StanjeSkladista WHERE MaterijalId = @Id AND SkladisteId = @SkladisteId", SqlParameters)
+                                        .FirstOrDefault();
+
+            if (!(query.Dostupno >= obj.Kolicina))
+            {
+                ViewBag.Error = "Odabrali ste kolicinu koja veca od one u skladistu, molimo odaberite drugo skladiste ili dodajte potrebne materijale na postojece skladiste";
+                return View("Greska");
+            }
+
             var izlaz = new Izlaz
             {
                 DatumKreiranja = DateTime.Now,
@@ -68,6 +86,8 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
                 IzlazId = izlaz.Id,
                 Kolicina = obj.Kolicina,
             };
+
+            ctx.IzlazStavke.Add(izlazStavka);
 
             ctx.SaveChanges();
             return RedirectToAction("Index");

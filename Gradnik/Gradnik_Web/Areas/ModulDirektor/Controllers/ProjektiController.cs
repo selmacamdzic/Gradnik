@@ -1,12 +1,16 @@
 ﻿using Gradnik_Data;
 using Gradnik_Data.Models;
 using Gradnik_Web.Areas.ModulDirektor.Models;
+using Gradnik_Web.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulDirektor.Controllers
 {
+    [Autorizacija(KorisnikUloga.Direktor)]
     public class ProjektiController : Controller
     {
         // GET: ModulDirektor/Projekti
@@ -40,7 +44,12 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
                 {
                     Text = x.Naziv + "-" + x.ImeOdgovorneOsobe,
                     Value = x.Id.ToString()
-                }).ToList()
+                }).ToList(),
+                Projekat = new Projekti
+                {
+                    DatumUgovora = DateTime.UtcNow,
+                    KrajProjekta = DateTime.UtcNow.AddMonths(1)
+                }
             };
 
             return View(model);
@@ -82,7 +91,6 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
         public ActionResult Aktivni()
         {
             var model = ctx.Projekti
-                .Where(x => x.Status == ProjektStatus.Aktivan)
                 .ToList();
 
             return View(model);
@@ -126,6 +134,53 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
             projekat.Naziv = vm.Projekat.Naziv;
             projekat.PocetakProjekta = vm.Projekat.PocetakProjekta;
 
+            return RedirectToAction("Aktivni");
+        }
+
+        public ActionResult Detalji(int id)
+        {
+            var projekatDetlji = new ProjekatDetaljiVM
+            {
+                Projekat = ctx.Projekti.FirstOrDefault(p => p.Id == id),
+                Radnici = ctx.RaspodjelaPosla
+                                .Where(r => r.Gradiliste.ProjektiId == id && r.KrajRada == null)
+                                .Select(d => new ProjekatRadniciVM
+                                {
+                                    Ime = d.Radnik.Ime,
+                                    Prezime = d.Radnik.Prezime,
+                                    JMBG = d.Radnik.JMBG,
+                                    TipPosla = d.TipPosla.Naziv,
+                                    RadnikId = d.RadnikId,
+                                    Zvanje = d.Radnik.Zvanje
+                                }).ToList()
+            };
+
+            return View(projekatDetlji);
+        }
+       
+        public ActionResult _ListaDokumenata(int id)
+        {
+            var lista = ctx.Dokumentacija.Where(x => x.ProjekatId == id).ToList();
+
+            return View(lista);
+        }
+
+        [HttpGet]
+        public FileResult DownLoadFile(int id)
+        {
+            var file = ctx.Dokumentacija.FirstOrDefault(x => x.Id == id);
+            var mimeType = MimeMapping.GetMimeMapping(file.Naziv);
+            return File(file.File, mimeType, file.Naziv);
+
+        }
+
+        [HttpGet]
+        public ActionResult Realizovan(int id)
+        {
+            var projekat = ctx.Projekti.FirstOrDefault(x => x.Id == id);
+            projekat.Status = ProjektStatus.Realizovan;
+
+            ctx.SaveChanges();
             return RedirectToAction("Aktivni");
         }
     }

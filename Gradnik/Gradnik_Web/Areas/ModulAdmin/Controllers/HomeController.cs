@@ -1,4 +1,5 @@
 ﻿using Gradnik_Data;
+using Gradnik_Data.Models;
 using Gradnik_Web.Helper;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulAdmin.Controllers
 {
+    [Autorizacija(KorisnikUloga.Admin)]
     public class HomeController : Controller
     {
         // GET: ModulAdmin/Home

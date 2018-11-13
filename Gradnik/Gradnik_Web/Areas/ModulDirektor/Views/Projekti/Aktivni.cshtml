@@ -4,6 +4,9 @@
     <thead>
         <tr>
             <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayName("Naziv")
+            </th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
                 @Html.DisplayName("Pocetak Projekta")
             </th>
             <th style="background-color:rgb(48, 54, 65); color:white;">
@@ -12,6 +15,9 @@
             <th style="background-color:rgb(48, 54, 65); color:white;">
                 @Html.DisplayName("Investitor")
             </th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayName("Status")
+            </th>
             <th style="background-color:rgb(48, 54, 65); color:white;"></th>
         </tr>
     </thead>
@@ -19,6 +25,8 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naziv)
                 <td>
                     @Html.DisplayFor(modelItem => item.PocetakProjekta)
                 </td>
@@ -29,8 +37,20 @@
                     @Html.DisplayFor(modelItem => item.Investitor.Naziv)
                 </td>
                 <td>
-                    @Html.ActionLink("Detalji", "Detalji", new { id = item.Id }) |
-                    @Html.ActionLink("Uredi", "Uredi", new { id = item.Id })
+                    @if (item.Status == Gradnik_Data.Models.ProjektStatus.Realizovan)
+                    {
+                        <p>Realizovan</p>
+                    }
+                    else
+                    {
+                        <p>Aktivan</p>
+
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Detalji", "Detalji", new { id = item.Id }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Uredi", "Uredi", new { id = item.Id }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Realizuj projekat", "Realizovan", new { id = item.Id }, new { onclick = "return confirm('Da li ste sigurni da zelite da projekat oznacite kao realizovan?');", @class = "btn btn-danger" })
                 </td>
             </tr>
         }

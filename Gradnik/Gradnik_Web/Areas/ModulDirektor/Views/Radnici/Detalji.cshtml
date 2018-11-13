@@ -1,0 +1,153 @@
+﻿@model Gradnik_Web.Areas.ModulDirektor.Models.RadniciDetaljiVM
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Detalji</a></li>
+    <li><a data-toggle="tab" href="#menu1">Zavrseni Projekat</a></li>
+    <li><a data-toggle="tab" href="#menu2">Trenutni Projekt</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <br />
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Radnik.Ime, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Radnik.Ime, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Radnik.Prezime, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Radnik.Prezime, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Radnik.ImeRoditelja, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Radnik.ImeRoditelja, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Radnik.JMBG, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Radnik.JMBG, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Radnik.Spol, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Radnik.Spol, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Radnik.DatumRodjenja, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Radnik.DatumRodjenja, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Radnik.KontaktTelefon, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Radnik.KontaktTelefon, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Radnik.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Radnik.Email, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Radnik.Grad, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Radnik.Grad, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Radnik.Zvanje, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Radnik.Zvanje, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+        @if (Model.TrenutniProjekat != null)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Datum</th>
+                    <th>Akcija</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>@Model.TrenutniProjekat.Naziv</td>
+                    <td>@Model.TrenutniProjekat.Datum.ToString("dd.MM.yyyy")</td>
+                    <td>
+                        @Html.ActionLink("Detalji", "Detalji", new { id = @Model.TrenutniProjekat.ProjektId })
+                    </td>
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Datum</th>
+                    <th>Akcija</th>
+                </tr>
+            </tfoot>
+        </table>
+        }
+        else
+        {
+            <p>Radnik trenutno nije zaduzen.</p>
+        }
+
+    </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3>Zavrseni projekti</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Datum</th>
+                        <th>Akcija</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ZavrseniProjekti)
+                {
+                    <tr>
+                        <td>@item.Naziv</td>
+                        <td>@item.Datum.ToString("dd.MM.yyyy")</td>
+                        <td>
+                            @Html.ActionLink("Detalji", "Detalji", new { id = item.ProjektId })
+                        </td>
+                    </tr>
+
+            }
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Datum</th>
+                        <th>Akcija</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>

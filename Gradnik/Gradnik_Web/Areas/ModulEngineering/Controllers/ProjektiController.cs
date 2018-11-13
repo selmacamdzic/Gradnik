@@ -1,6 +1,7 @@
 ﻿using Gradnik_Data;
 using Gradnik_Data.Models;
 using Gradnik_Web.Areas.ModulEngineering.Models;
+using Gradnik_Web.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulEngineering.Controllers
 {
+    [Autorizacija(KorisnikUloga.Arhitekta)]
     public class ProjektiController : Controller
     {
         // GET: ModulEngineering/Projekti
@@ -66,6 +68,16 @@ namespace Gradnik_Web.Areas.ModulEngineering.Controllers
             var mimeType = MimeMapping.GetMimeMapping(file.Naziv);
             return File(file.File, mimeType, file.Naziv);
 
+        }
+
+        [HttpGet]
+        public ActionResult ObrisiDokument(int id)
+        {
+            var file = ctx.Dokumentacija.FirstOrDefault(x => x.Id == id);
+            ctx.Dokumentacija.Remove(file);
+            ctx.SaveChanges();
+
+            return RedirectToAction("Dokumentacija", new { id = file.ProjekatId });
         }
     }
 }

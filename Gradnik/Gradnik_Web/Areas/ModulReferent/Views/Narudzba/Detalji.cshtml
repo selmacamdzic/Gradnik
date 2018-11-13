@@ -8,7 +8,6 @@
 
 @Html.HiddenFor(model => model.Id, new { @id = "narudzbaId" })
 
-@Html.TextBoxFor(model => model.BrojFakture, new { @id = "brojFakture" })
 
 <table class="table table-hover table-bordered" id="narudzbeDetalji">
     <thead>
@@ -63,19 +62,18 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/ModulSefGradilista/Narudzbe/Procesiraj',
+                url: '/ModulReferent/Narudzba/Procesiraj',
                 data: JSON.stringify({
                     stavke: narudzbaList,
                     dobavljacId: $("#dobavljacId").val(),
                     skladisteId: $("#skladisteId").val(),
                     narudzbaId: $("#narudzbaId").val(),
-                    brojFakture: $("#brojFakture").val()
                 }), // our data object
                 contentType: 'application/json',
             })
                 // using the done promise callback
                 .done(function (data) {
-                    console.log(data);
+                    window.location.replace("/ModulReferent/UlazneFakture/Index");
                 });
             event.preventDefault();
         });

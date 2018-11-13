@@ -1,11 +1,13 @@
 ﻿using Gradnik_Data;
 using Gradnik_Data.Models;
 using Gradnik_Web.Areas.ModulDirektor.Models;
+using Gradnik_Web.Helper;
 using System.Linq;
 using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulDirektor.Controllers
 {
+    [Autorizacija(KorisnikUloga.Direktor)]
     public class RadniciController : Controller
     {
         // GET: ModulDirektor/Radnici
@@ -116,25 +118,28 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult ActiveWorkInfo(int id)
+        public ActionResult Detalji(int id)
         {
-            var model = new WorkInfoVM {
-
-                //dodati uslov u raspodjeli posla da je kraj null
-
-                workInfo = ctx.RaspodjelaPosla.Where(x=>x.RadnikId==id && x.KorisnikId==1014).Select(x => new WorkInfoRow
+            var detaljiVM = new RadniciDetaljiVM
+            {
+                Radnik = ctx.Radnici.FirstOrDefault(k => k.Id == id),
+                ZavrseniProjekti = ctx.RaspodjelaPosla.Where(r => r.RadnikId == id).Select(x => new RadniciProjektiVM
                 {
-                    RaspodjelaPoslaId = x.Id,
-                    workareaName = x.Opis,
-                    jobtitle = x.TipPosla.Naziv,
-                    startDate = x.PocetakRada,
-                    hours = ctx.Sati.Where(y => y.RaspodjelaPoslaId == x.Id && y.isPlaceno == true).Sum(y => y.OdradjeniSati)
-
-                }).FirstOrDefault()
+                    Datum = x.Gradiliste.Projekti.DatumUgovora,
+                    Naziv = x.Gradiliste.Projekti.Naziv,
+                    ProjektId = x.Gradiliste.ProjektiId
+                }).ToList(),
+                TrenutniProjekat = ctx.RaspodjelaPosla
+                    .Where(r => r.KrajRada == null && r.Id == id)
+                    .Select(x => new RadniciProjektiVM
+                    {
+                        Datum = x.Gradiliste.Projekti.DatumUgovora,
+                        Naziv = x.Gradiliste.Projekti.Naziv,
+                        ProjektId = x.Gradiliste.ProjektiId
+                    }).FirstOrDefault()
             };
 
-            return View(model);
+            return View(detaljiVM);
         }
-
     }
 }

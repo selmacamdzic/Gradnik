@@ -1,13 +1,15 @@
 ﻿<div class="row">
-    @using (Ajax.BeginForm("SpremiIzvjestaj", new AjaxOptions { UpdateTargetId = "updateIzvjestaj" }))
-    {
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" name="Izvjestaj" rows="3"></textarea>
-        <input type="hidden" name="GradilisteId" value="@ViewBag.GradilisteId" />
+    <div class="col-xs-12">
+        @using (Ajax.BeginForm("SpremiIzvjestaj", new AjaxOptions { UpdateTargetId = "updateIzvjestaj" }))
+        {
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Unesite izvjestaj</label>
+                <textarea class="form-control" name="Izvjestaj" rows="3"></textarea>
+                <input type="hidden" name="GradilisteId" value="@ViewBag.GradilisteId" />
+            </div>
+            <input type="submit" name="Spremi" value="Spremi" class="btn btn-success"/>
+        }
     </div>
-    <input type="submit" name="Spremi" value="Spremi" />
-    }
 </div>
 <div id="updateIzvjestaj">
     @Html.Action("_Spremljeni", new { id = ViewBag.GradilisteId })

@@ -33,9 +33,9 @@
                 <h2 class="fs-title">Nadlezni na projektu</h2>
                 <h3 class="fs-subtitle">Unesite informacije on nadleznim osobama</h3>
                 <h4 class="fs-subtitle">Odaberi investitora</h4>
-                @Html.DropDownListFor(model => model.InvestitorId, Model.Investitor)
+                @Html.DropDownListFor(model => model.InvestitorId, Model.Investitor, new {@class= "form-control" })
                 <h4 class="fs-subtitle">Odaberi nadleznu osobu</h4>
-                @Html.DropDownListFor(model => model.KorisnikId, Model.Korisnik)
+                @Html.DropDownListFor(model => model.KorisnikId, Model.Korisnik, new { @class = "form-control" })
                 <br />
                 <br />
                 <input type="button" name="previous" class="previous action-button-previous" value="Prethodno" />

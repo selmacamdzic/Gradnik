@@ -1,11 +1,13 @@
 ﻿using Gradnik_Data;
 using Gradnik_Data.Models;
 using Gradnik_Web.Areas.ModulAdmin.Models;
+using Gradnik_Web.Helper;
 using System.Linq;
 using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulAdmin.Controllers
 {
+    [Autorizacija(KorisnikUloga.Admin)]
     public class MaterijaliController : Controller
     {
         MojContext ctx = new MojContext();

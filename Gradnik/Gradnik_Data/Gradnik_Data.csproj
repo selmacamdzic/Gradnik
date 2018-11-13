@@ -89,6 +89,14 @@
     <Compile Include="Migrations\201811032020513_Edit_Dokumentacija_Opis.Designer.cs">
       <DependentUpon>201811032020513_Edit_Dokumentacija_Opis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811101004395_Edit_RaspodjelaPosla_KrajRada.cs" />
+    <Compile Include="Migrations\201811101004395_Edit_RaspodjelaPosla_KrajRada.Designer.cs">
+      <DependentUpon>201811101004395_Edit_RaspodjelaPosla_KrajRada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811111951480_Remove_MaterijaliDostupni.cs" />
+    <Compile Include="Migrations\201811111951480_Remove_MaterijaliDostupni.Designer.cs">
+      <DependentUpon>201811111951480_Remove_MaterijaliDostupni.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Dobavljaci.cs" />
     <Compile Include="Models\Dokumentacija.cs" />
@@ -98,7 +106,6 @@
     <Compile Include="Models\IzlazStavke.cs" />
     <Compile Include="Models\Izvjestaji.cs" />
     <Compile Include="Models\Korisnici.cs" />
-    <Compile Include="Models\MaterijalDostupni.cs" />
     <Compile Include="Models\Materijal.cs" />
     <Compile Include="Models\NarudbzbaStavka.cs" />
     <Compile Include="Models\Narudzba.cs" />
@@ -150,6 +157,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811032020513_Edit_Dokumentacija_Opis.resx">
       <DependentUpon>201811032020513_Edit_Dokumentacija_Opis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811101004395_Edit_RaspodjelaPosla_KrajRada.resx">
+      <DependentUpon>201811101004395_Edit_RaspodjelaPosla_KrajRada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811111951480_Remove_MaterijaliDostupni.resx">
+      <DependentUpon>201811111951480_Remove_MaterijaliDostupni.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

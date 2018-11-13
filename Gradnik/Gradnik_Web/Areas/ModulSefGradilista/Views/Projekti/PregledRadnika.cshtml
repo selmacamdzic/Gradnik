@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Gradnik_Web.Areas.ModulSefGradilista.Models.RapsodjelaRadnikaPrikazVM>
+
+
+<table class="table" id="radniciTabela">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Pocetak Rada")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gradiliste)
+            </th>
+            <th>
+                @Html.DisplayName("Tip posla")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PocetakRada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Opis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gradiliste)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipPosla)
+                </td>
+                <td>
+                    @Html.ActionLink("Ukloni", "UkloniRadnika", new { radnikId = item.RadnikId, raspodjelaId = item.RaspodjelaId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.ActionLink("Dodaj radnika", "Dodaj", "RaspodjelaPosla", new { gradilisteId = ViewBag.GradilisteId, area = "ModulSefGradilista" }, new { @class = "btn btn-success btn-sm entypo-info" })
+
+<script>
+    $(document).ready(function () {
+        $('#radniciTabela').DataTable();
+    });
+</script>
+
+<style>
+    #radniciTabela th {
+        background-color: rgb(48, 54, 65);
+        color: white;
+    }
+</style>

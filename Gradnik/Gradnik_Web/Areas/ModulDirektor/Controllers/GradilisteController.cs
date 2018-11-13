@@ -1,9 +1,12 @@
 ﻿using Gradnik_Data;
+using Gradnik_Data.Models;
+using Gradnik_Web.Helper;
 using System.Linq;
 using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulDirektor.Controllers
 {
+    [Autorizacija(KorisnikUloga.Direktor)]
     public class GradilisteController : Controller
     {
         // GET: ModulDirektor/Gradiliste

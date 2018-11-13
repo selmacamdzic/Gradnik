@@ -1,6 +1,7 @@
 ﻿using Gradnik_Data;
 using Gradnik_Data.Models;
 using Gradnik_Web.Areas.ModulSefGradilista.Models;
+using Gradnik_Web.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
 {
+    [Autorizacija(KorisnikUloga.SefGradilista)]
     public class RaspodjelaPoslaController : Controller
     {
         // GET: ModulSefGradilista/RaspodjelaPosla
@@ -39,62 +41,26 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
             {
                 GradilisteId = vm.GradilisteId,
                 PocetakRada = vm.PocetakRada,
-                KrajRada = vm.PocetakRada,
                 TipPoslaId = vm.TipPoslaId,
                 Opis = vm.Opis,
                 RadnikId = vm.RadnikId,
-                //setati logiranog korisnika
-                KorisnikId = 3,
+                KorisnikId = Autentifikacija.GetLogiraniKorisnik(this.HttpContext).Id
             };
             
             ctx.RaspodjelaPosla.Add(raspodjelaPosla);
             ctx.SaveChanges();
 
-            return RedirectToAction("TipPoslaByGradiliste", "TipPosla", new
+            return RedirectToAction("PregledRadnika", "Projekti", new
             {
-                gradilisteId = vm.GradilisteId
+                Id = vm.GradilisteId
             });
         }
-
-
-        //public ActionResult PrikazRadnika(int gradilisteId, int tipPoslaId)
-        //{
-
-        //    List<PrikazRadnikaRow> listRadnik = new List<PrikazRadnikaRow>();
-
-        //    List<RaspodjelaPosla> raspodjela = ctx.RaspodjelaPosla.Where(x => x.GradilisteId == gradilisteId && x.TipPoslaId == tipPoslaId).ToList();
-        //    foreach (RaspodjelaPosla item in raspodjela)
-        //    {
-        //        PrikazRadnikaRow row = new PrikazRadnikaRow();
-        //        row.gradilisteId = item.Gradiliste.Id;
-        //        row.radnikId = item.Radnik.Id;
-        //        row.tipPoslaId = item.TipPosla.Id;
-        //        row.imePrezime = item.Radnik.Ime + " " + item.Radnik.Prezime;
-        //        row.Grad = item.Radnik.Grad;
-        //        row.JMBG = item.Radnik.JMBG;
-        //        row.KontaktTelefon = item.Radnik.KontaktTelefon;
-        //        row.tipPosla = item.TipPosla.Naziv;
-        //        row.isZaduzen = item.KrajRada == null ? true : false;
-
-        //        listRadnik.Add(row);
-        //    }
-        //    var model = new PrikazRadnikaVM
-        //    {
-        //        listaRadnika = listRadnik,
-        //        tiposlaId = tipPoslaId,
-        //        gradilisteId = gradilisteId
-        //    };
-
-
-
-        //    return View(model);
-        //}
 
         public ActionResult Evidentiraj(int gradilisteId)
         {
             List<PrikazRadnikaRow> listRadnik = new List<PrikazRadnikaRow>();
 
-            List<RaspodjelaPosla> raspodjela = ctx.RaspodjelaPosla.Where(x => x.GradilisteId == gradilisteId).ToList();
+            List<RaspodjelaPosla> raspodjela = ctx.RaspodjelaPosla.Where(x => x.GradilisteId == gradilisteId && x.KrajRada != null).ToList();
             foreach (RaspodjelaPosla item in raspodjela)
             {
                 PrikazRadnikaRow row = new PrikazRadnikaRow();

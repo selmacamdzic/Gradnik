@@ -2,6 +2,8 @@
 var dataset = [];
 
 $(document).ready(function () {
+
+    var initialStep = false;
     var table = $('#narudzbaTable').DataTable();
     $('#narudzbaTable tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
@@ -43,7 +45,7 @@ $(document).ready(function () {
             });
         }
         else {
-            table = $('#example').DataTable({
+            $('#example').DataTable({
                 paging: false,
                 data: dataset,
                 columns: [
