@@ -62,5 +62,14 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
 
             return View(procesiraneNarudzbe);
         }
+
+        public ActionResult DetaljiNarudzbe(int id)
+        {
+            var procesiraneNarudzbe = ctx.NarudbzbaStavka
+               .Where(x => x.NarudzbaId == id)
+               .ToList();
+
+            return View(procesiraneNarudzbe);
+        }
     }
 }

@@ -94,7 +94,7 @@ function Evidentiraj(dataToSend) {
             }),
         contentType: 'application/json; charset=utf-8',
         success: function (data) {
-           //Moze se dodati redirect
+            window.location.replace("/ModulSefGradilista/Gradiliste/Index");
         }
     });
 }

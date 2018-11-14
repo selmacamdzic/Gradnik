@@ -1,13 +1,18 @@
-﻿using System.Web.Mvc;
+﻿using Gradnik_Data;
+using Gradnik_Web.Models;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Gradnik_Web.Areas.ModulReferent.Controllers
 {
     public class SkladisteController : Controller
     {
-        // GET: ModulReferent/Skladiste
+        MojContext ctx = new MojContext();
         public ActionResult Index()
         {
-            return View();
+
+            var model = ctx.Database.SqlQuery<StanjeSkladistaDto>("SELECT * FROM StanjeSkladista").ToList();
+            return View(model);
         }
     }
 }

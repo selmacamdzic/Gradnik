@@ -12,7 +12,7 @@
 </div>
 <div class="col-md-2">
     <label for="datumRada">Unesite datum</label>
-    <input type="date" id="datumRada">
+    <input type="date" id="datumRada" class="form-control">
 </div>
 <div class="col-md-2">
     <div class="btn-toolbar btn-container">
@@ -70,7 +70,9 @@
 </table>
 
 
-
+<script>
+    document.getElementById('datumRada').valueAsDate = new Date();
+</script>
 <style>
     #searchInput {
         background-image: url('/assets/images/searchicon.png');

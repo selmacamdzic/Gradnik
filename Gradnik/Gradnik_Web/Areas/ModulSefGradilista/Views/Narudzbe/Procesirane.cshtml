@@ -16,7 +16,7 @@
 
                 <td>@item.Id</td>
                 <td>@item.Datum</td>
-                <td><button class="btn btn-success">Detalji Ulaza</button></td>
+                <td>@Html.ActionLink("Detalji", "DetaljiNarudzbe", new { id = item.Id })</td>
             </tr>
         }
 
@@ -30,8 +30,3 @@
         </tr>
     </tfoot>
 </table>
-<script>
-    $(document).ready(function () {
-        $('#procesiraneNarudzbe').DataTable();
-    });
-</script>

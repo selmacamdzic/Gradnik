@@ -19,7 +19,12 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
         // GET: ModulSefGradilista/Home
         public ActionResult Index()
         {
-            return View();
+            var gradiliste = ctx.Gradiliste.Select(x => new SelectListItem
+            {
+                Text = x.Grad + " - " + x.Adresa,
+                Value = x.Id.ToString()
+            });
+            return View(gradiliste);
         }
 
         public JsonResult PotrosnjaPoGradilistu(int id)

@@ -1,0 +1,95 @@
+﻿@model Gradnik_Web.Areas.ModulReferent.Models.EvidencijaRadnogVremena
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm())
+            {
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.Label("Datum Od:", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.Od, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Datum Do:", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.Do, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("Gradiliste", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-7">
+                            @Html.DropDownListFor(model => model.GradilisteId, Model.Gradilista, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Pretrazi" class="btn btn-success" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <table class="table table-hover table-bordered" id="korisniciTable">
+                <thead>
+                    <tr>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Ime i Prezime</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">JMBG</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Gradiliste</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Odradjeni sati</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Isplaceno</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.EvidencijaIsplate)
+                    {
+
+                        <tr>
+                            <td>@item.Ime @item.Prezime</td>
+                            <td>@item.JMBG</td>
+                            <td>@item.Gradiliste</td>
+                            <td>@item.OdradjeniSati</td>
+                            <td>
+                                @if (@item.IsPlaceno)
+                                {
+                                    <p>Isplaceno</p>
+                                }
+                                else
+                                {
+                                    <p>Neisplaceno</p>
+
+                                }
+                            </td>
+                            <td>
+                                @if (!@item.IsPlaceno)
+                                {
+                                    @Html.ActionLink("Isplati", "Isplati", new { id = item.Id }, new { @class = "btn btn-success" })
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Ime i Prezime</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">JMBG</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Gradiliste</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Odradjeni sati</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Isplaceno</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

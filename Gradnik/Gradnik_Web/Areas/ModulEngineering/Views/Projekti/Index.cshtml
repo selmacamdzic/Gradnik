@@ -4,6 +4,9 @@
     <thead>
         <tr>
             <th style="background-color:rgb(48, 54, 65); color:white;">
+                @Html.DisplayName("Naziv")
+            </th>
+            <th style="background-color:rgb(48, 54, 65); color:white;">
                 @Html.DisplayName("Pocetak Projekta")
             </th>
             <th style="background-color:rgb(48, 54, 65); color:white;">
@@ -18,20 +21,23 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PocetakProjekta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KrajProjekta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Investitor.Naziv)
-                </td>
-                <td>
-                    @Html.ActionLink("Dodaj dokumentaciju", "Dokumentacija", new { id = item.Id })
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PocetakProjekta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KrajProjekta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Investitor.Naziv)
+            </td>
+            <td>
+                @Html.ActionLink("Evidentiraj dokumentaciju", "Dokumentacija", new { id = item.Id }, new { @class = "btn btn-success" })
+            </td>
+        </tr>
         }
     </tbody>
 </table>

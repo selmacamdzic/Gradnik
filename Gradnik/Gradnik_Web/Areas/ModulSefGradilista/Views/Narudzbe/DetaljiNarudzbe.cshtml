@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Gradnik_Data.Models.NarudbzbaStavka>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Naziv</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Kolicina</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>@item.Materijal.Naziv</td>
+                            <td>@item.Kolicina</td>
+                        </tr>
+                    }
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Naziv</th>
+                        <th style="background-color:rgb(48, 54, 65); color:white;">Kolicina</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
