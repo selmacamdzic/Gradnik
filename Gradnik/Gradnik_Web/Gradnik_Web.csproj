@@ -462,6 +462,7 @@
     <Content Include="Areas\ModulEngineering\Views\Skladiste\Index.cshtml" />
     <Content Include="Areas\ModulReferent\Views\RaspodjelaPosla\Index.cshtml" />
     <Content Include="Areas\ModulSefGradilista\Views\Narudzbe\DetaljiNarudzbe.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
