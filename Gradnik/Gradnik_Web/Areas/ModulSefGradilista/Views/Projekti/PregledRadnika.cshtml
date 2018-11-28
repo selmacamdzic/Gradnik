@@ -5,7 +5,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayName("Pocetak Rada")
+                @Html.DisplayName("Ime i prezime")
+            </th>
+            <th>
+                @Html.DisplayName("Pocetak rada")
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Opis)
@@ -22,23 +25,26 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PocetakRada)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Opis)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gradiliste)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TipPosla)
-                </td>
-                <td>
-                    @Html.ActionLink("Ukloni", "UkloniRadnika", new { radnikId = item.RadnikId, raspodjelaId = item.RaspodjelaId })
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImePrezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PocetakRada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gradiliste)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipPosla)
+            </td>
+            <td>
+                @Html.ActionLink("Ukloni", "UkloniRadnika", new { radnikId = item.RadnikId, raspodjelaId = item.RaspodjelaId },new { @class="btn btn-danger" })
+            </td>
+        </tr>
         }
     </tbody>
 </table>

@@ -7,9 +7,8 @@
         <h3>Izvjestaji</h3>
     </div>
 </div>
-<div class="row">
-    @foreach (var item in Model)
-    {
+@foreach (var item in Model)
+{
     <div class="col-sm-10">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -19,7 +18,13 @@
                 @item.Izvjestaj
             </div>
         </div>
-        @Ajax.ActionLink("Obrisi", "ObrisiIzvjestaj", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "updateIzvjestaj", HttpMethod="Post" }, new { @class = "btn btn-danger" })
     </div>
+    <div class="col-sm-2 izvjestajobrisi">
+        @Ajax.ActionLink("Obrisi", "ObrisiIzvjestaj", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "updateIzvjestaj", HttpMethod = "Post" }, new { @class = "btn btn-danger" })
+    </div>
+}
+<style>
+    .izvjestajobrisi a {
+        margin-top: 30%
     }
-</div>
+</style>

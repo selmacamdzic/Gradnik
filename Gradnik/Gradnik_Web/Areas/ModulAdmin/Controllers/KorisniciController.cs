@@ -41,7 +41,8 @@ namespace Gradnik_Web.Areas.ModulAdmin.Controllers
         {
             var model = new KorisniciDodajVM
             {
-                listaPozicija = BindPozicije()
+                listaPozicija = BindPozicije(),
+                DatumRodjenja = DateTime.UtcNow
             };
 
             return View(model);

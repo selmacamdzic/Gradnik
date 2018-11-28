@@ -12,15 +12,17 @@ $(document).ready(function () {
         $(this).toggleClass('selected');
     });
 
-    $('#prviKorak').click(function () {
+    $('#prviKorak').click(function (e) {
+
+        narudzbaList = [];
+        dataset = [];
 
         if (!table.rows('.selected').data().length) {
             alert('Odaberite najmanje jedan proizvod.');
             return;
         }
-
         for (var i = 0; i < table.rows('.selected').data().length; i++) {
-            var index = table.rows('.selected').data()[i][0];
+            var index = table.rows('.selected').data()[i][0] - 1;
             narudzbaList.push({
                 id: table.rows('.selected').data()[i][0],
                 naziv: table.rows('.selected').data()[i][1],
@@ -35,6 +37,7 @@ $(document).ready(function () {
         }
 
         if ($.fn.dataTable.isDataTable('#example')) {
+            $('#example').DataTable().destroy();
             $('#example').DataTable({
                 data: dataset,
                 columns: [
@@ -68,7 +71,7 @@ $(document).ready(function () {
         })
             // using the done promise callback
             .done(function (data) {
-                window.location.href = "/ModulSefGradilista/";
+                window.location.href = "/ModulSefGradilista/Home/Index";
             });
         event.preventDefault();
     });

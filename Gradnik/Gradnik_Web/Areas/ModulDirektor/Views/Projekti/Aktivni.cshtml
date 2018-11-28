@@ -1,64 +1,131 @@
 ﻿@model IEnumerable<Gradnik_Data.Models.Projekti>
 
-<table class="table" id="aktivniProjekti">
-    <thead>
-        <tr>
-            <th style="background-color:rgb(48, 54, 65); color:white;">
-                @Html.DisplayName("Naziv")
-            </th>
-            <th style="background-color:rgb(48, 54, 65); color:white;">
-                @Html.DisplayName("Pocetak Projekta")
-            </th>
-            <th style="background-color:rgb(48, 54, 65); color:white;">
-                @Html.DisplayName("Kraj Projekta")
-            </th>
-            <th style="background-color:rgb(48, 54, 65); color:white;">
-                @Html.DisplayName("Investitor")
-            </th>
-            <th style="background-color:rgb(48, 54, 65); color:white;">
-                @Html.DisplayName("Status")
-            </th>
-            <th style="background-color:rgb(48, 54, 65); color:white;"></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Naziv)
-                <td>
-                    @Html.DisplayFor(modelItem => item.PocetakProjekta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KrajProjekta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Investitor.Naziv)
-                </td>
-                <td>
-                    @if (item.Status == Gradnik_Data.Models.ProjektStatus.Realizovan)
-                    {
-                        <p>Realizovan</p>
-                    }
-                    else
-                    {
-                        <p>Aktivan</p>
 
-                    }
-                </td>
-                <td>
-                    @Html.ActionLink("Detalji", "Detalji", new { id = item.Id }, new { @class = "btn btn-info" }) |
-                    @Html.ActionLink("Uredi", "Uredi", new { id = item.Id }, new { @class = "btn btn-info" }) |
-                    @Html.ActionLink("Realizuj projekat", "Realizovan", new { id = item.Id }, new { onclick = "return confirm('Da li ste sigurni da zelite da projekat oznacite kao realizovan?');", @class = "btn btn-danger" })
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
 
-<script>
-    $(document).ready(function () {
-        $('#aktivniProjekti').DataTable();
-    });
-</script>
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Aktivni projekti</a></li>
+    <li><a data-toggle="tab" href="#menu1">Realizovani projekti</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <table class="table" id="aktivniProjekti">
+            <thead>
+                <tr>
+                    <th style="background-color:rgb(48, 54, 65); color:white;">
+                        @Html.DisplayName("Naziv")
+                    </th>
+                    <th style="background-color:rgb(48, 54, 65); color:white;">
+                        @Html.DisplayName("Pocetak Projekta")
+                    </th>
+                    <th style="background-color:rgb(48, 54, 65); color:white;">
+                        @Html.DisplayName("Kraj Projekta")
+                    </th>
+                    <th style="background-color:rgb(48, 54, 65); color:white;">
+                        @Html.DisplayName("Investitor")
+                    </th>
+                    <th style="background-color:rgb(48, 54, 65); color:white;">
+                        @Html.DisplayName("Status")
+                    </th>
+                    <th style="background-color:rgb(48, 54, 65); color:white;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Where(x => x.Status == Gradnik_Data.Models.ProjektStatus.Aktivan))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Naziv)
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PocetakProjekta)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KrajProjekta)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Investitor.Naziv)
+                        </td>
+                        <td>
+                            @if (item.Status == Gradnik_Data.Models.ProjektStatus.Realizovan)
+                            {
+                                <p>Realizovan</p>
+                            }
+                            else
+                            {
+                                <p>Aktivan</p>
+
+                            }
+                        </td>
+                        <td>
+                            @Html.ActionLink("Detalji", "Detalji", new { id = item.Id }, new { @class = "btn btn-info" }) |
+                            @Html.ActionLink("Uredi", "Uredi", new { id = item.Id }, new { @class = "btn btn-info" }) |
+                            @Html.ActionLink("Realizuj projekat", "Realizovan", new { id = item.Id }, new { onclick = "return confirm('Da li ste sigurni da zelite da projekat oznacite kao realizovan?');", @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <script>
+            $(document).ready(function () {
+                $('#aktivniProjekti').DataTable();
+            });
+        </script>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+        <table class="table" id="realizovaniProjekti">
+            <thead>
+                <tr>
+                    <th style="background-color:rgb(48, 54, 65); color:white;">
+                        @Html.DisplayName("Naziv")
+                    </th>
+                    <th style="background-color:rgb(48, 54, 65); color:white;">
+                        @Html.DisplayName("Pocetak Projekta")
+                    </th>
+                    <th style="background-color:rgb(48, 54, 65); color:white;">
+                        @Html.DisplayName("Kraj Projekta")
+                    </th>
+                    <th style="background-color:rgb(48, 54, 65); color:white;">
+                        @Html.DisplayName("Investitor")
+                    </th>
+                    <th style="background-color:rgb(48, 54, 65); color:white;">
+                        @Html.DisplayName("Status")
+                    </th>
+                    <th style="background-color:rgb(48, 54, 65); color:white;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Where(x => x.Status == Gradnik_Data.Models.ProjektStatus.Realizovan))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Naziv)
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PocetakProjekta)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KrajProjekta)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Investitor.Naziv)
+                        </td>
+                        <td>
+                            <p>Realizovan</p>
+                        </td>
+                        <td>
+                            @Html.ActionLink("Detalji", "Detalji", new { id = item.Id }, new { @class = "btn btn-info" }) |
+                            @Html.ActionLink("Uredi", "Uredi", new { id = item.Id }, new { @class = "btn btn-info" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <script>
+            $(document).ready(function () {
+                $('#realizovaniProjekti').DataTable();
+            });
+        </script>
+    </div>
+</div>

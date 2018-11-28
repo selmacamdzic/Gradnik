@@ -52,10 +52,8 @@
     })
 
     //odaberi jednog
-    $('#radniciTabela tr:has(td)').click(function () {
-        var isChecked = $(this).find('input[type="checkbox"]').prop("checked");
-        $(this).find('input[type="checkbox"]').prop('checked', !isChecked);
-        $(this).find('input[type="text"]').prop("disabled", isChecked);
+    $('#radniciTabela tr:has(td) input[type="checkbox"]').click(function () {
+        var isChecked = $(this).prop("checked");
         !isChecked ? $(this).css('background-color', 'aliceblue') : $(this).css('background-color', 'white');
     });
 

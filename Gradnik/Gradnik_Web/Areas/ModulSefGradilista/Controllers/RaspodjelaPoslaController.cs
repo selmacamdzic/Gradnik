@@ -22,7 +22,8 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
                 listaRadnik = BindRadnici(),
                 GradilisteId = gradilisteId,
                 TipPosla = ctx.TipPosla
-                            .Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Naziv }).ToList()
+                            .Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Naziv }).ToList(),
+                PocetakRada = DateTime.UtcNow
             };
 
             return View(model);
@@ -60,7 +61,7 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
         {
             List<PrikazRadnikaRow> listRadnik = new List<PrikazRadnikaRow>();
 
-            List<RaspodjelaPosla> raspodjela = ctx.RaspodjelaPosla.Where(x => x.GradilisteId == gradilisteId && x.KrajRada != null).ToList();
+            List<RaspodjelaPosla> raspodjela = ctx.RaspodjelaPosla.Where(x => x.GradilisteId == gradilisteId && x.KrajRada == null).ToList();
             foreach (RaspodjelaPosla item in raspodjela)
             {
                 PrikazRadnikaRow row = new PrikazRadnikaRow();

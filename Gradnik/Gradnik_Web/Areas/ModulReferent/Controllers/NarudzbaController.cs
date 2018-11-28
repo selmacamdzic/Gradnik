@@ -104,7 +104,7 @@ namespace Gradnik_Web.Areas.ModulReferent.Controllers
 
             ctx.SaveChanges();
 
-            return RedirectToAction("Procesirane");
+            return RedirectToAction("AktivneNarudzbe");
         }
 
         private static Random random = new Random();

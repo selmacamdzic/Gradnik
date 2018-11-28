@@ -48,6 +48,7 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
                 Projekat = new Projekti
                 {
                     DatumUgovora = DateTime.UtcNow,
+                    PocetakProjekta = DateTime.UtcNow,
                     KrajProjekta = DateTime.UtcNow.AddMonths(1)
                 }
             };

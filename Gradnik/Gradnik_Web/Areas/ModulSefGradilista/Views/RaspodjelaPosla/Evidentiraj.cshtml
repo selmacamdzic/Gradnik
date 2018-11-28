@@ -5,70 +5,81 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.HiddenFor(model => model.gradilisteId, new { @id = "gradilisteId" })
+<div class="container">
+    <div class="row">
 
-<div class="col-md-6 searchContainer">
-    <input type="text" id="searchInput" placeholder="Pretrazi ...">
-</div>
-<div class="col-md-2">
-    <label for="datumRada">Unesite datum</label>
-    <input type="date" id="datumRada" class="form-control">
-</div>
-<div class="col-md-2">
-    <div class="btn-toolbar btn-container">
-        <button class="btn btn-info" id="odaberiSve">
-            <span class="glyphicon glyphicon-check"></span>
-            Odaberi sve
-        </button>
-        <button class="btn btn-danger" id="ukloniOdabrane">
-            <span class="glyphicon glyphicon-trash"></span>
-            Ukloni odabrane
-        </button>
-        <button class="btn btn-success" id="evidentiraj">
-            <span class="glyphicon glyphicon-save"></span>
-            Spremi
-        </button>
+        @Html.HiddenFor(model => model.gradilisteId, new { @id = "gradilisteId" })
+
+        <div class="col-md-4 searchContainer">
+            <input type="text" id="searchInput" placeholder="Pretrazi ...">
+        </div>
+        <div class="col-md-2">
+            <label for="datumRada">Unesite datum</label>
+            <input type="date" id="datumRada" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <br />
+            <div class="form-group">
+                <div class="col-md-4">
+                    <button class="btn btn-info" id="odaberiSve">
+                        <span class="glyphicon glyphicon-check"></span>
+                        Odaberi sve
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-danger" id="ukloniOdabrane">
+                        <span class="glyphicon glyphicon-trash"></span>
+                        Ukloni odabrane
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-success" id="evidentiraj">
+                        <span class="glyphicon glyphicon-save"></span>
+                        Spremi
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <table id="radniciTabela">
+            <tr class="header">
+                <th></th>
+                <th> <i class="glyphicon glyphicon-user"></i>&nbsp;Ime i Prezime</th>
+                <th><i class="glyphicon glyphicon-briefcase"></i>&nbsp;Zvanje</th>
+                <th><i class="glyphicon glyphicon-certificate"></i>&nbsp;JMBG</th>
+                <th><i class="glyphicon glyphicon-calendar"></i>&nbsp;Datum rodjenja</th>
+                <th><i class="glyphicon glyphicon-home"></i>&nbsp;Grad</th>
+                <th><i class="glyphicon glyphicon-envelope"></i>&nbsp;Email</th>
+                <th><i class="glyphicon glyphicon-earphone"></i>&nbsp;Kontakt Telefon</th>
+                <th><i class="glyphicon glyphicon-time"></i>&nbsp;Radno vrijeme</th>
+            </tr>
+            <tbody id="fbody">
+                @foreach (var radnik in Model.listaRadnika)
+            {
+                <tr>
+                    <td>
+                        <label class="container-checkbox">
+                            <input type="checkbox" value="@radnik.radnikId">
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td>@radnik.imePrezime</td>
+                    <td>@radnik.Zvanje</td>
+                    <td>@radnik.JMBG</td>
+                    <td>@radnik.DatumRodjenja</td>
+                    <td>@radnik.Grad</td>
+                    <td>@radnik.Email</td>
+                    <td>@radnik.KontaktTelefon</td>
+                    <td>
+                        <input type="text" id="radnoVrijeme" value="8" />
+                    </td>
+
+                </tr>
+        }
+            </tbody>
+        </table>
     </div>
 </div>
-
-<table id="radniciTabela">
-    <tr class="header">
-        <th></th>
-        <th> <i class="glyphicon glyphicon-user"></i>&nbsp;Ime i Prezime</th>
-        <th><i class="glyphicon glyphicon-briefcase"></i>&nbsp;Zvanje</th>
-        <th><i class="glyphicon glyphicon-certificate"></i>&nbsp;JMBG</th>
-        <th><i class="glyphicon glyphicon-calendar"></i>&nbsp;Datum rodjenja</th>
-        <th><i class="glyphicon glyphicon-home"></i>&nbsp;Grad</th>
-        <th><i class="glyphicon glyphicon-envelope"></i>&nbsp;Email</th>
-        <th><i class="glyphicon glyphicon-earphone"></i>&nbsp;Kontakt Telefon</th>
-        <th><i class="glyphicon glyphicon-time"></i>&nbsp;Radno vrijeme</th>
-    </tr>
-    <tbody id="fbody">
-        @foreach (var radnik in Model.listaRadnika)
-        {
-            <tr>
-                <td>
-                    <label class="container-checkbox">
-                        <input type="checkbox" value="@radnik.radnikId">
-                        <span class="checkmark"></span>
-                    </label>
-                </td>
-                <td>@radnik.imePrezime</td>
-                <td>@radnik.Zvanje</td>
-                <td>@radnik.JMBG</td>
-                <td>@radnik.DatumRodjenja</td>
-                <td>@radnik.Grad</td>
-                <td>@radnik.Email</td>
-                <td>@radnik.KontaktTelefon</td>
-                <td>
-                    <input type="text" id="radnoVrijeme" value="8" disabled />
-                </td>
-
-            </tr>
-        }
-    </tbody>
-</table>
-
 
 <script>
     document.getElementById('datumRada').valueAsDate = new Date();

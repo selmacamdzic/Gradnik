@@ -55,10 +55,6 @@
                     cijena: parseFloat($('#cijena' + i).val())
                 });
             }
-            console.log(narudzbaList);
-        });
-
-        $('#procesiraj').click(function () {
 
             $.ajax({
                 type: 'POST',
@@ -73,11 +69,10 @@
             })
                 // using the done promise callback
                 .done(function (data) {
-                    window.location.replace("/ModulReferent/UlazneFakture/Index");
+                    window.location.replace("/ModulReferent/Narudzba/AktivneNarudzbe");
                 });
             event.preventDefault();
         });
-
     });
 
 </script>

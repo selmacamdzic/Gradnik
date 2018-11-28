@@ -10,5 +10,6 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Models
         public string Opis { get; set; }
         public string Gradiliste { get; set; }
         public string TipPosla { get; set; }
+        public string ImePrezime { get; set; }
     }
 }

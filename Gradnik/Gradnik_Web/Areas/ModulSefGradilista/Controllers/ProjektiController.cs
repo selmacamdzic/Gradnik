@@ -55,7 +55,8 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
                 PocetakRada = x.PocetakRada,
                 TipPosla = x.TipPosla.Naziv,
                 RaspodjelaId = x.Id,
-                Gradiliste = x.Gradiliste.Adresa
+                Gradiliste = x.Gradiliste.Adresa,
+                ImePrezime = x.Radnik.Ime + " " + x.Radnik.Prezime
             }).ToList();
 
             ViewBag.GradilisteId = id;
