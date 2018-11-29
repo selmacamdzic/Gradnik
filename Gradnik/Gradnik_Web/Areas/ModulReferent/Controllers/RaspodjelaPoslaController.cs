@@ -42,7 +42,7 @@ namespace Gradnik_Web.Areas.ModulReferent.Controllers
                new SqlParameter("Do", SqlDbType.DateTime) { Value = obj.Do }
             };
 
-            var query = ctx.Database.SqlQuery<EvidencijaIsplateDto>("SELECT * FROM EvidencijaRadnogVremena")
+            var query = ctx.Database.SqlQuery<EvidencijaIsplateDto>("SELECT * FROM EvidencijaRadnogVremena WHERE GradilisteId = @Id AND Datum BETWEEN @Od AND @Do", SqlParameters)
                                         .ToList();
             var model = new EvidencijaRadnogVremena
             {

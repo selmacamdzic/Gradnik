@@ -21,7 +21,7 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
         public ActionResult Index()
         {
             var korisnik = Autentifikacija.GetLogiraniKorisnik(this.HttpContext);
-            var model = ctx.Gradiliste.Where(g=>g.Projekti.KorisnikId == korisnik.Id)
+            var model = ctx.Gradiliste.Where(g => g.Projekti.KorisnikId == korisnik.Id)
                 .ToList();
             return View(model);
         }
@@ -54,7 +54,7 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
         [HttpPost]
         public ActionResult UtrosakMaterijala(AddIzlazVM obj)
         {
-            var SqlParameters = new[] 
+            var SqlParameters = new[]
             {
                new SqlParameter("Id", SqlDbType.Int) { Value = obj.MaterijalId },
                new SqlParameter("SkladisteId", SqlDbType.Int) { Value = obj.SkladisteId }
@@ -64,7 +64,7 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
                                         .SqlQuery<StanjeSkladistaDto>("SELECT * FROM StanjeSkladista WHERE MaterijalId = @Id AND SkladisteId = @SkladisteId", SqlParameters)
                                         .FirstOrDefault();
 
-            if (!(query.Dostupno >= obj.Kolicina))
+            if (query == null || !(query.Dostupno >= obj.Kolicina))
             {
                 ViewBag.Error = "Odabrali ste kolicinu koja veca od one u skladistu, molimo odaberite drugo skladiste ili dodajte potrebne materijale na postojece skladiste";
                 return View("Greska");

@@ -123,7 +123,7 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
             var detaljiVM = new RadniciDetaljiVM
             {
                 Radnik = ctx.Radnici.FirstOrDefault(k => k.Id == id),
-                ZavrseniProjekti = ctx.RaspodjelaPosla.Where(r => r.RadnikId == id).Select(x => new RadniciProjektiVM
+                ZavrseniProjekti = ctx.RaspodjelaPosla.Where(r => r.RadnikId == id && r.Gradiliste.Projekti.Status == ProjektStatus.Realizovan).Select(x => new RadniciProjektiVM
                 {
                     Datum = x.Gradiliste.Projekti.DatumUgovora,
                     Naziv = x.Gradiliste.Projekti.Naziv,

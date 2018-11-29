@@ -2,8 +2,8 @@
 
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Detalji</a></li>
-    <li><a data-toggle="tab" href="#menu1">Zavrseni Projekat</a></li>
-    <li><a data-toggle="tab" href="#menu2">Trenutni Projekt</a></li>
+    <li><a data-toggle="tab" href="#menu1">Trenutni Projekat</a></li>
+    <li><a data-toggle="tab" href="#menu2">Zavrseni Projekt</a></li>
 </ul>
 
 <div class="tab-content">
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Radnik.ImeRoditelja, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Radnik.ImeRoditelja,"Ime roditelja" ,htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.Radnik.ImeRoditelja, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
                     </div>
@@ -46,14 +46,14 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Radnik.DatumRodjenja, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Radnik.DatumRodjenja,"Datum rodjenja", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Radnik.DatumRodjenja, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                        @Html.TextBoxFor(model => model.Radnik.DatumRodjenja, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control", @disabled = "disabled"  })
                     </div>
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Radnik.KontaktTelefon, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.LabelFor(model => model.Radnik.KontaktTelefon,"Kontakt telefon", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.Radnik.KontaktTelefon, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
                     </div>
@@ -118,7 +118,7 @@
 
     </div>
         <div id="menu2" class="tab-pane fade">
-            <h3>Zavrseni projekti</h3>
+            <h3>Trenutni projekti</h3>
             <table class="table table-striped">
                 <thead>
                     <tr>

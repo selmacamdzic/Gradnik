@@ -23,8 +23,8 @@
                 <td>@item.Email</td>
                 <td>@item.Grad</td>
                 <td>
-                    @Ajax.ActionLink("Uredi", "Edit", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success btn-sm entypo-info" })
-                    @Html.ActionLink("Detalji", "Detalji",new {id = item.Id })
+                    @Ajax.ActionLink("Uredi", "Edit", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "ajaxDialog", OnSuccess = "otvoriDialog" }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Detalji", "Detalji",new {id = item.Id }, new { @class = "btn btn-info" })
                 </td>
             </tr>
 
