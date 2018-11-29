@@ -113,7 +113,7 @@
     <Content Include="Assets\Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
     <Content Include="Assets\Login\fonts\ubuntu\UFL.txt" />
     <Content Include="Assets\Login\images\bg-01.jpg" />
-    <Content Include="Assets\Login\images\icons\favicon.ico" />
+    <Content Include="Assets\Login\images\favicon.ico" />
     <Content Include="Assets\Login\index.html" />
     <Content Include="Assets\Login\js\main.js" />
     <Content Include="Assets\Login\vendor\animate\animate.css" />
@@ -590,6 +590,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\ModulSefGradilista\Views\Izlaz\" />
+    <Folder Include="Assets\Login\images\icons\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gradnik_Data\Gradnik_Data.csproj">
