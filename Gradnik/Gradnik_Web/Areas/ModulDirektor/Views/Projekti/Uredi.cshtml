@@ -35,7 +35,7 @@
         <div class="form-group">
             @Html.Label("Pocetak rada", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Projekat.PocetakProjekta, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control" })
+                @Html.TextBoxFor(model => model.Projekat.PocetakProjekta, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Projekat.PocetakProjekta, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="form-group">
             @Html.Label("Kraj projekta", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Projekat.KrajProjekta, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control" })
+                @Html.TextBoxFor(model => model.Projekat.KrajProjekta, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Projekat.KrajProjekta, "", new { @class = "text-danger" })
             </div>
         </div>
