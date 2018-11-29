@@ -38,36 +38,42 @@ namespace Gradnik_Api.Controllers
         public IHttpActionResult GetAktivniRadnici(int tipPoslaId, int projekatId)
         {
 
-            var radnici = ctx.RaspodjelaPosla
-                    .Where(r => r.Gradiliste.ProjektiId == projekatId && r.TipPoslaId == tipPoslaId && r.KrajRada == null)
-                    .Select(x => new
-                    {
-                        Id = x.Radnik.Id,
-                        Ime = x.Radnik.Ime,
-                        Prezime = x.Radnik.Prezime,
-                        Zvanje = x.Radnik.Zvanje ?? "Zvanje",
-                        JMBG = x.Radnik.JMBG,
-                        DatumRodjenja = x.Radnik.DatumRodjenja,
-                        Email = x.Radnik.Email,
-                        KontaktTelefon = x.Radnik.KontaktTelefon,
-                        Adresa = x.Radnik.Grad,
-                        RadniSati = (int?)ctx.Sati.Where(s => s.RaspodjelaPoslaId == x.Id).Sum(o => o.OdradjeniSati) ?? 0
-                    }).ToList();
+            //var radnici = ctx.RaspodjelaPosla
+            //        .Where(r => r.Gradiliste.ProjektiId == projekatId && r.TipPoslaId == tipPoslaId && r.KrajRada == null)
+            //        .Select(x => new
+            //        {
+            //            Id = x.Radnik.Id,
+            //            Ime = x.Radnik.Ime,
+            //            Prezime = x.Radnik.Prezime,
+            //            Zvanje = x.Radnik.Zvanje ?? "Zvanje",
+            //            JMBG = x.Radnik.JMBG,
+            //            DatumRodjenja = x.Radnik.DatumRodjenja,
+            //            Email = x.Radnik.Email,
+            //            KontaktTelefon = x.Radnik.KontaktTelefon,
+            //            Adresa = x.Radnik.Grad,
+            //            RadniSati = (int?)ctx.Sati.Where(s => s.RaspodjelaPoslaId == x.Id).Sum(o => o.OdradjeniSati) ?? 0
+            //        }).ToList();
 
-            return Ok(radnici);
+            var SqlParameters = new[]
+            {
+               new SqlParameter("tipPoslaId", SqlDbType.Int) { Value = tipPoslaId },
+               new SqlParameter("projekatId", SqlDbType.Int) { Value = projekatId }
+            };
+
+            var query = ctx.Database.SqlQuery<AktivniRadniciVM>("SELECT * FROM GetAktivniRadnici WHERE TipPoslaId = @tipPoslaId and ProjekatId = @projekatId", SqlParameters)
+                                        .ToList();
+            return Ok(query);
         }
 
         [HttpGet]
         public IHttpActionResult GetTipPoslaByProjekatId(int id)
         {
-            var gradiliste = ctx.Gradiliste.FirstOrDefault(x => x.ProjektiId == id);
-
             var SqlParameters = new[]
-           {
-               new SqlParameter("Id", SqlDbType.Int) { Value = gradiliste.Id }
+            {
+               new SqlParameter("ProjekatId", SqlDbType.Int) { Value = id }
             };
 
-            var query = ctx.Database.SqlQuery<TipPoslovaPoGradilistuVM>("SELECT * FROM TipPoslovaPoGradilistu WHERE GradilisteId = @Id", SqlParameters)
+            var query = ctx.Database.SqlQuery<TipPoslovaPoGradilistuVM>("SELECT * FROM TipPoslovaPoGradilistu WHERE ProjekatId = @ProjekatId", SqlParameters)
                                         .ToList();
 
 

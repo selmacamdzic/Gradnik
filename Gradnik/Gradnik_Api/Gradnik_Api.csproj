@@ -189,6 +189,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AddRadnikVM.cs" />
+    <Compile Include="Models\AktivniRadniciVM.cs" />
     <Compile Include="Models\DodajRadnikaVM.cs" />
     <Compile Include="Models\EvidencijaVM.cs" />
     <Compile Include="Models\ProjektiPrikazVM.cs" />

@@ -40,8 +40,8 @@ namespace Gradnik_Api.Controllers
                 OdradjeniSati = obj.radniSati,
                 RaspodjelaPoslaId = raspodjela.Id
             };
+            ctx.Sati.Add(sati);
             ctx.SaveChanges();
-
             return Ok();
         }
     }
