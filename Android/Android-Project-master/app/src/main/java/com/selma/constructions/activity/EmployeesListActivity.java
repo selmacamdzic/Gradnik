@@ -92,7 +92,7 @@ public class EmployeesListActivity extends BaseActivityForAsyncTask implements E
                 employee.setEmail(object.get("Email").toString());
                 employee.setPhone(object.get("KontaktTelefon").toString());
                 employee.setAddress(object.get("Adresa").toString());
-                employee.setWorkHours(Integer.parseInt(object.get("RadniSati").toString()));
+                employee.setWorkHours(Float.parseFloat(object.get("RadniSati").toString()));
                 employees.add(employee);
             }
 

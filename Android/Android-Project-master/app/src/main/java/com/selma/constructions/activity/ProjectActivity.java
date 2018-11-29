@@ -120,7 +120,7 @@ public class ProjectActivity extends BaseActivityForAsyncTask {
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(projectInfoFragment, "O Projektu");
-        adapter.addFragment(jobsTypesFragment, "Tipova poslaova");
+        adapter.addFragment(jobsTypesFragment, "Tipovi poslova");
 
         viewPager.setAdapter(adapter);
 

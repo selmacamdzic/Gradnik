@@ -210,13 +210,18 @@ public class MainActivity extends BaseActivityForAsyncTask {
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(activeProjectsFragment, "Aktivni projekti");
-        adapter.addFragment(inactiveProjectsFragment, "Ne aktivni projekti");
+        adapter.addFragment(inactiveProjectsFragment, "Neaktivni projekti");
 
         viewPager.setAdapter(adapter);
     }
 
     public void showAllEmployees(View view) {
         startActivity(new Intent(this, AllCompanyEmployeesActivity.class));
+    }
+
+    public void logOut(View view) {
+        currentUser = null;
+        startActivity(new Intent(this, LoginActivity.class));
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

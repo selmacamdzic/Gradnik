@@ -51,7 +51,7 @@ public class AllCompanyEmployeesActivity extends BaseActivityForAsyncTask implem
             getSupportActionBar().setTitle("Dodaj uposlenika");
             selectedEmployees = new ArrayList<>();
         } else {
-            getSupportActionBar().setTitle("Sve zaposleni");
+            getSupportActionBar().setTitle("Svi zaposleni");
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

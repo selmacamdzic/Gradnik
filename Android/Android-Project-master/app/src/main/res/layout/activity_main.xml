@@ -277,17 +277,31 @@
             android:layout_alignLeft="@+id/activity_main_location" />
 
         <Button
-            android:id="@+id/textView24"
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView23"
+        android:layout_alignStart="@+id/imageView5"
+        android:layout_alignLeft="@+id/imageView5"
+        android:layout_marginTop="15dp"
+        android:background="@color/blue"
+        android:padding="5dp"
+        android:onClick="showAllEmployees"
+        android:text="Prikazi sve zaposlene" />
+
+        <Button
+            android:id="@+id/textView25"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_below="@+id/textView23"
             android:layout_alignStart="@+id/imageView5"
             android:layout_alignLeft="@+id/imageView5"
             android:layout_marginTop="15dp"
+            android:layout_marginLeft="230dp"
             android:background="@color/blue"
-            android:padding="5dp"
-            android:onClick="showAllEmployees"
-            android:text="Prikazi sve zaposlane" />
+            android:padding="15dp"
+            android:onClick="logOut"
+            android:text="Odjavi se" />
 
     </RelativeLayout>
 
