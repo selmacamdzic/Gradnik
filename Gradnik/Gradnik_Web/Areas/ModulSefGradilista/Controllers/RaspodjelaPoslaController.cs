@@ -49,6 +49,10 @@ namespace Gradnik_Web.Areas.ModulSefGradilista.Controllers
             };
             
             ctx.RaspodjelaPosla.Add(raspodjelaPosla);
+
+            var radnik = ctx.Radnici.Find(vm.RadnikId);
+            radnik.isZaduzen = true;
+
             ctx.SaveChanges();
 
             return RedirectToAction("PregledRadnika", "Projekti", new

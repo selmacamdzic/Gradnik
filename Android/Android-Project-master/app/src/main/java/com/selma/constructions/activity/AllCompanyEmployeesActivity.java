@@ -38,6 +38,9 @@ public class AllCompanyEmployeesActivity extends BaseActivityForAsyncTask implem
     private long currentJobId;
     public static final String EMPLOYEE = "employee";
     private Project currentProject;
+    public static final String CURRENT_PROJECT = "current_project";
+    public static final String CURRENT_JOBID = "current_jobid";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,10 @@ public class AllCompanyEmployeesActivity extends BaseActivityForAsyncTask implem
         mainLayout.setVisibility(View.GONE);
         GetDataAsArray getDataAsArray = new GetDataAsArray(this);
         String url = Config.baseUrl+"Radnici/GetRadnici";
+        if (currentJobId > -1)
+        {
+            url = Config.baseUrl+"Radnici/GetSlobodniRadnici";
+        }
         getDataAsArray.execute(url); // id = -1 , Show all employees in company
 
     }
@@ -192,4 +199,11 @@ public class AllCompanyEmployeesActivity extends BaseActivityForAsyncTask implem
         finish();
     }
 
+    @Override
+    public Intent getParentActivityIntent() {
+        Intent intent = super.getParentActivityIntent();
+        intent.putExtra(CURRENT_PROJECT,currentProject);
+        intent.putExtra(CURRENT_JOBID,currentJobId);
+        return intent;
+    }
 }

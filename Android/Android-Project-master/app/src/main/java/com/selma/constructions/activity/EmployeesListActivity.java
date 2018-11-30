@@ -43,6 +43,7 @@ public class EmployeesListActivity extends BaseActivityForAsyncTask implements E
     private EmployeesListAdapter employeesListAdapter;
     public static final String CURRENT_PROJECT = "current_project";
     private Project currentProject;
+    private Project currentProject2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,14 @@ public class EmployeesListActivity extends BaseActivityForAsyncTask implements E
         setContentView(R.layout.activity_employees_list);
 
         jobTypeId = getIntent().getLongExtra(JobsTypesFragment.JOB_ID, 0);
+        if (jobTypeId == 0)
+        {
+            jobTypeId = getIntent().getLongExtra(AllCompanyEmployeesActivity.CURRENT_JOBID, 0);
+        }
         currentProject = (Project) getIntent().getSerializableExtra(JobsTypesFragment.CURRENT_PROJECT);
+
+        if (currentProject == null)
+            currentProject = (Project) getIntent().getSerializableExtra(AllCompanyEmployeesActivity.CURRENT_PROJECT);
 
         getSupportActionBar().setTitle("Svi uposlenici");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

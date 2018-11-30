@@ -18,6 +18,13 @@ namespace Gradnik_Api.Controllers
             return Ok(radnici);
         }
 
+        public IHttpActionResult GetSlobodniRadnici()
+        {
+            var radnici = ctx.Radnici.Where(x=>x.isZaduzen == false).ToList();
+
+            return Ok(radnici);
+        }
+
         [HttpGet]
         public IHttpActionResult Login(string username, string password)
         {

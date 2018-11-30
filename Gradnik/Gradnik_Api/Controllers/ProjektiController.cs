@@ -120,6 +120,8 @@ namespace Gradnik_Api.Controllers
                     RadnikId = item,
                     KorisnikId = 3
                 });
+                var radnik = ctx.Radnici.Find(item);
+                radnik.isZaduzen = true;
             }
             ctx.SaveChanges();
             return Ok();
