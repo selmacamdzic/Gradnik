@@ -24,6 +24,7 @@ import com.selma.constructions.Config;
 import com.selma.constructions.Fragments.ProjectsListFragment;
 import com.selma.constructions.GetDataAsArray;
 import com.selma.constructions.R;
+import com.selma.constructions.model.Employee;
 import com.selma.constructions.model.Project;
 import com.selma.constructions.model.User;
 
@@ -44,6 +45,7 @@ public class MainActivity extends BaseActivityForAsyncTask {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private boolean doubleBackToLogOutPressedOnce = false;
+    public static final String EMPLOYEE = "employee";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,18 +74,7 @@ public class MainActivity extends BaseActivityForAsyncTask {
     private void setUserDetails(){
 
         TextView username = findViewById(R.id.activity_main_user_name);
-        TextView address = findViewById(R.id.activity_main_location);
-        TextView mobileNumber = findViewById(R.id.activity_main_phone_number);
-        TextView profession = findViewById(R.id.activity_main_profession);
-        TextView email = findViewById(R.id.activity_main_email);
-        TextView birthday = findViewById(R.id.activity_main_birthday);
-
         username.setText(currentUser.getFirstName() + " " + currentUser.getLastName());
-        address.setText(currentUser.getAddress());
-        mobileNumber.setText(currentUser.getPhone());
-        profession.setText(currentUser.getProfession());
-        email.setText(currentUser.getEmail());
-        birthday.setText(currentUser.getBirthDate());
 
     }
 
@@ -222,6 +213,20 @@ public class MainActivity extends BaseActivityForAsyncTask {
     public void logOut(View view) {
         currentUser = null;
         startActivity(new Intent(this, LoginActivity.class));
+    }
+
+    public void showUserInfo(View view) {
+        Employee employee = new Employee();
+        employee.setAddress(currentUser.getAddress());
+        employee.setName(currentUser.getFirstName() + " " + currentUser.getLastName());
+        employee.setPhone(currentUser.getPhone());
+        employee.setRank(currentUser.getProfession());
+        employee.setEmail(currentUser.getEmail());
+        employee.setDate(currentUser.getBirthDate());
+        employee.setSocialNumber("No number");
+        Intent intent = new Intent(this, EmployeeActivity.class);
+        intent.putExtra(EMPLOYEE, employee);
+        startActivity(intent);
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
