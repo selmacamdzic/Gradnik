@@ -192,6 +192,26 @@ obj/
 .idea/workspace.xml
 .idea/tasks.xml
 
+app/.idea/caches/
+app/.idea/libraries/
+app/.idea/shelf/
+app/.idea/.name
+app/.idea/compiler.xml
+app/.idea/copyright/profiles_settings.xml
+app/.idea/encodings.xml
+app/.idea/misc.xml
+app/.idea/modules.xml
+app/.idea/scopes/scope_settings.xml
+app/.idea/vcs.xml
+app/.idea/jsLibraryMappings.xml
+app/.idea/datasources.xml
+app/.idea/dataSources.ids
+app/.idea/sqlDataSources.xml
+app/.idea/dynamic.xml
+app/.idea/uiDesigner.xml
+app/.idea/workspace.xml
+app/.idea/tasks.xml
+
 # OS-specific files
 .DS_Store
 .DS_Store?
