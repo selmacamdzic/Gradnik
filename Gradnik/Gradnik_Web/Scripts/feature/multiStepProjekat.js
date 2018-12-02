@@ -76,3 +76,13 @@ $(".previous").click(function () {
         easing: 'easeInOutBack'
     });
 });
+
+$('#submitProjekt').click(function (e) {
+    if ($('#Projekat_Naziv').val() == '' || $('#Gradiliste_Grad').val() == ''
+        || $('#Gradiliste.Opstina').val() == ''
+        || $('#Gradiliste_Adresa').val() == '') {
+        $('#error-msg').css('display', 'block');
+        e.preventDefault();
+        return;
+    }
+})

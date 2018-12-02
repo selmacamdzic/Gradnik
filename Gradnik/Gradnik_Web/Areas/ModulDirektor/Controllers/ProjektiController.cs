@@ -63,7 +63,7 @@ namespace Gradnik_Web.Areas.ModulDirektor.Controllers
             var projekatAdd = new Projekti
             {
                 Naziv = obj.Projekat.Naziv,
-                Lokacija = obj.Projekat.Lokacija,
+                Lokacija = obj.Gradiliste.Grad,
                 InvestitorId = obj.InvestitorId,
                 KorisnikId = obj.KorisnikId,
                 DatumUgovora = obj.Projekat.DatumUgovora,
