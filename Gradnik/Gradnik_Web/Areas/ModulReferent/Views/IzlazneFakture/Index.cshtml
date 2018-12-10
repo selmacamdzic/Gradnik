@@ -5,7 +5,6 @@
     <thead>
         <tr>
             <th style="background-color:rgb(48, 54, 65); color:white;">Datum kreiranja</th>
-            <th style="background-color:rgb(48, 54, 65); color:white;">Broj fakture</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Skladiste</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Gradiliste</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>
@@ -16,8 +15,8 @@
         {
 
             <tr class="odd gradeX">
-                <td>@item.DatumKreiranja.ToString("dd.mm.yyyy")</td>
-                <td>@item.BrojFakture</td>
+                <td>
+                   @item.DatumKreiranja.ToString("dd/MM/yyyy")</td>
                 <td>@item.Skladiste.Naziv</td>
                 <td>@item.Gradiliste.Grad - @item.Gradiliste.Adresa</td>
                 <td>
@@ -30,7 +29,6 @@
     <tfoot>
         <tr>
             <th style="background-color:rgb(48, 54, 65); color:white;">Datum kreiranja</th>
-            <th style="background-color:rgb(48, 54, 65); color:white;">Broj fakture</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Skladiste</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Gradiliste</th>
             <th style="background-color:rgb(48, 54, 65); color:white;">Akcija</th>

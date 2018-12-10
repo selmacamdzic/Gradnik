@@ -1,40 +1,34 @@
 ﻿@model IEnumerable<Gradnik_Web.Models.StanjeSkladistaDto>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped" id="skladisteTable">
-                <thead>
-                    <tr>
-                        <th>Skladiste</th>
-                        <th>Materijal</th>
-                        <th>Dostupno</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
+<table class="table table-striped" id="skladisteTable">
+    <thead>
+        <tr>
+            <th>Skladiste</th>
+            <th>Materijal</th>
+            <th>Dostupno</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
 
-                        <tr>
-                            <td>@item.Skladiste</td>
-                            <td>@item.Materijal</td>
-                            <td>@item.Dostupno</td>
-                        </tr>
-                    }
+            <tr>
+                <td>@item.Skladiste</td>
+                <td>@item.Materijal</td>
+                <td>@item.Dostupno</td>
+            </tr>
+        }
 
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th>Skladiste</th>
-                        <th>Materijal</th>
-                        <th>Dostupno</th>
-                    </tr>
-                </tfoot>
-            </table>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Skladiste</th>
+            <th>Materijal</th>
+            <th>Dostupno</th>
+        </tr>
+    </tfoot>
+</table>
 
-        </div>
-    </div>
-</div>
 
 <script>
     $(document).ready(function () {
